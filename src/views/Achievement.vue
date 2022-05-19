@@ -1,5 +1,5 @@
 <template>
   <div class="mt-3">
-    <origin></origin>
+    <achievement></achievement>
   </div>
 </template>

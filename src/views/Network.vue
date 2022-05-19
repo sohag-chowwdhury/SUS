@@ -10,7 +10,7 @@
               <ul>
                 <li v-for="(i, index) in table.arr" :key="index + '6'">
                  <p>
-                  <span class="innerText">{{i.name}}:</span> {{i.description}}
+                  <span class="innerText">{{i.name}}:</span> 
                  </p>
                 </li>
               </ul>
@@ -27,11 +27,11 @@ export default {
   data() {
     return {
       table:{
-          title: "Management Structure",
-          description: "SUS Management Structure consists of: a. Head of SUS Management, b. Senior Management Team (SMT) and c. Operational Staff Members.", 
+          title: "Linkage and Network",
+       
           arr: [
-           {name:"Head of SUS Management",description:"The Executive Director is appointed by the EC and is treated as the Head of the organizational management who shoulders the overall responsibility of efficient and effective management of the organization."}, 
-           {name:"Senior Management Team (SMT)",description:"In order to increase coordination across various projects and programs, a committee comprising of all departmental heads is formed in the name of Senior Management Team (SMT)."}, {name:"Staff Members",description:"SUS is implementing its projects and programs deploying a pool of human resources who are dedicated, committed and well experienced in their respective fields."},
+           {name:"Excellent working relationship/linkage has been developed with local level GoB service providers like DAE, DLS, and Department of Mass Education, Department of Health and Family Welfare, Department of Social welfare, Department of Woman affairs etc."}, 
+           {name:"SUS Linkages and Network with other organizations are with: Micro-Credit, Summit, Washington; PKSF-Net Work; InM; ADAB; NGO-Forum; Anukul Foundation, MDF; Credit Development Forum (CDF); Traffic Watch Bangladesh(TWB); WBB Trust."}
           ],
         }
     };
