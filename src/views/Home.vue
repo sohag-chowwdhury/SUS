@@ -17,35 +17,43 @@
       >
         <v-flex xs10 sm10 md10 lg10 text-start>
           <v-img class="header-logo" :src="logo"> </v-img>
-          <h2>
-            Social Upliftment Society (SUS) is  <br>  <span :class="hover ? 'hoverEfect' && 'left-dely' : ''"
-              > a women-led   </span
-            >
-           Non-Political, Not-for-Profit
-            <br />
-            &  Non-Governmental Organization (NGO).
-          </h2>
+          <div data-aos="fade-up">
+            <h2>
+              Social Upliftment Society (SUS) is <br />
+              <span :class="hover ? 'hoverEfect' && 'left-dely' : ''">
+                a women-led
+              </span>
+              Non-Political, Not-for-Profit
+              <br />
+              & Non-Governmental Organization (NGO).
+            </h2>
+          </div>
         </v-flex>
       </v-layout>
     </div>
-      
 
-
-  <v-container>
-
-      <v-divider class="my-3 hideLg"></v-divider>
-
-    
+    <v-container>
+      <v-layout row wrap justify-center>
+        <v-flex class="header_text" xs10 sm10 md10 lg10>
+          <div data-aos="fade-right">
+            <h1 style="text-align: center !important">
+              Vision , Mission & Goal
+            </h1>
+          </div>
+        </v-flex>
+      </v-layout>
 
       <v-layout row wrap justify-center class="header2">
         <div class="mt-2" v-for="(item, index) in sliderData" :key="item.index">
           <v-layout row wrap v-if="slide == index">
             <v-flex class="hide" xs12 sm6 md6 lg6 text-start>
-              <v-img class="left-dely slider slider-img" :src="item.img">
-              </v-img>
+              <div data-aos="flip-left">
+                <v-img class="left-dely slider slider-img" :src="item.img">
+                </v-img>
+              </div>
             </v-flex>
             <v-flex xs10 sm6 md6 lg6 text-start>
-              <div class="slider-h">
+              <div data-aos="fade-down-right" class="slider-h">
                 <h1 class="slider-number">{{ index + 1 }}</h1>
                 <h1 :class="index > 0 ? 'slider1-h1' : ''" class="slider-h1">
                   {{ item.title }}
@@ -105,274 +113,143 @@
           </v-layout>
         </div>
       </v-layout>
-      </v-container>
-        <!-- second -->
-      <v-layout row wrap justify-center    class=" header2">
-        <v-flex xs12 sm6 md6 lg6 text-start  >
-          
-           <v-layout  row wrap justify-center>
-               <v-flex xs12 sm12 md12 lg12 text-start style="margin-right:2%; margin-top:10%; margin-left:10%">
-                 <v-card
-            color="blue darken-4"
-            dark
-          >
-            <div class="d-flex flex-no-wrap justify-space-between">
-              <div>
-                 <v-card-subtitle v-text="text1"></v-card-subtitle>
-                <v-card-title
-                  class="text-h5"
-                  v-text="text2"
-                ></v-card-title>
+    </v-container>
+    <!-- second -->
+    <v-layout row wrap justify-center class="header2">
+      <v-flex class="header_text" xs10 sm10 md10 lg10>
+        <div data-aos="fade-right">
+          <h1 style="text-align: center !important">Aphorism</h1>
+        </div>
+      </v-flex>
 
-               
-                
+      <v-flex xs12 sm6 md6 lg6 text-start>
+        <v-layout row wrap justify-center>
+          <v-flex
+            xs12
+            sm12
+            md12
+            lg12
+            text-start
+            style="margin-right: 2%; margin-top: 10%; margin-left: 10%"
+          >
+            <v-card color="blue darken-4" dark>
+              <div
+                data-aos="zoom-in-down"
+                class="d-flex flex-no-wrap justify-space-between"
+              >
+                <div>
+                  <v-card-subtitle v-text="text1"></v-card-subtitle>
+                  <v-card-title class="text-h5" v-text="text2"></v-card-title>
+                </div>
+
+                <v-avatar class="ma-3" size="125" tile>
+                  <v-img :src="cr"></v-img>
+                </v-avatar>
               </div>
-
-              <v-avatar
-                class="ma-3"
-                size="125"
-                tile
-              >
-                <v-img :src="cr"></v-img>
-              </v-avatar>
-            </div>
-          </v-card>
-          <v-card>
-            <p class="my-1">
-              I, as the Chairman of the Executive Committee of Social Upliftment Society (SUS) am overwhelmingly delighted and feel honoured to present the Annual Report of the Social Upliftment Society (SUS) for the financial year 2019-2020. This report actually accounts in brief the activities and achievements that were accomplished during this said period.
-              In this reporting year, SUS was able to reach more than 40,000 Nos. of people living across its program implementation areas. It was also able to maintain its reputation as a national organization providing services to the targeted disadvantaged people including the excluded people living in its working areas. SUS has been particularly trying to expand its operations in poverty prone urban areas. Special emphasis is being given to social and economic empowerment of the poor women, livelihood and entrepreneurship development, the agricultural development and food security and child rights development.
-
-
-            </p>
-          </v-card>
-               </v-flex>
-           </v-layout>
-            
-          
-        </v-flex>
-       <v-flex xs12 sm6 md6 lg6 text-start class="mt-8">
-           
-           <v-layout  row wrap justify-center  style="margin-left:2%; margin-top:10%; margin-right:10%">
-               <v-flex xs12 sm12 md12 lg12 text-start class="">
-                 <v-card
-            color="blue darken-1"
-            dark
-          >
-            <div class="d-flex flex-no-wrap justify-space-between">
-              <div>
-                 <v-card-subtitle v-text="text1"></v-card-subtitle>
-                <v-card-title
-                  class="text-h5"
-                  v-text="text2"
-                ></v-card-title>
-
-               
-                
+            </v-card>
+            <v-card>
+              <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <p class="my-1">
+                  I, as the Chairman of the Executive Committee of Social
+                  Upliftment Society (SUS) am overwhelmingly delighted and feel
+                  honoured to present the Annual Report of the Social Upliftment
+                  Society (SUS) for the financial year 2019-2020. This report
+                  actually accounts in brief the activities and achievements
+                  that were accomplished during this said period. In this
+                  reporting year, SUS was able to reach more than 40,000 Nos. of
+                  people living across its program implementation areas. It was
+                  also able to maintain its reputation as a national
+                  organization providing services to the targeted disadvantaged
+                  people including the excluded people living in its working
+                  areas. SUS has been particularly trying to expand its
+                  operations in poverty prone urban areas. Special emphasis is
+                  being given to social and economic empowerment of the poor
+                  women, livelihood and entrepreneurship development, the
+                  agricultural development and food security and child rights
+                  development.
+                </p>
+                <v-btn
+                  style="margin-left: 70%"
+                  text
+                  class="btn-design1 button1 my-3"
+                  >Read More <v-icon>mdi-arrow-right</v-icon></v-btn
+                >
               </div>
-
-              <v-avatar
-                class="ma-3"
-                size="125"
-                tile
-              >
-                <v-img :src="cr"></v-img>
-              </v-avatar>
-            </div>
-          </v-card>
-          <v-card>
-            <p class="my-1">
-              I, as the Chairman of the Executive Committee of Social Upliftment Society (SUS) am overwhelmingly delighted and feel honoured to present the Annual Report of the Social Upliftment Society (SUS) for the financial year 2019-2020. This report actually accounts in brief the activities and achievements that were accomplished during this said period.
-              In this reporting year, SUS was able to reach more than 40,000 Nos. of people living across its program implementation areas. It was also able to maintain its reputation as a national organization providing services to the targeted disadvantaged people including the excluded people living in its working areas. SUS has been particularly trying to expand its operations in poverty prone urban areas. Special emphasis is being given to social and economic empowerment of the poor women, livelihood and entrepreneurship development, the agricultural development and food security and child rights development.
-
-
-            </p>
-          </v-card>
-               </v-flex>
-           </v-layout>
-            
-         
-        </v-flex>
-      </v-layout>
-      <v-divider class="mt-9 hideLg"></v-divider>
-      <v-layout row wrap justify-center>
-        <v-flex xs12 md12 lg12 sm12 text-center class="my-7">
-          <h2
-            style="margin-bottom: 1% !important; color: black; font-weight: 800"
-          >
-            Features
-          </h2>
-          <h4 style="margin: auto !important; font-weight: 400">
-            Technology solution thats cover your needs
-          </h4>
-        </v-flex>
-        <v-flex xs12 md12 lg12 sm12 text-center>
-          <v-btn
-            @click="filterData(item, index)"
-            text
-            color="grey darken-4"
-            :class="indexValue == index ? 'error lighten-1' : ''"
-            class="button2"
-            v-for="(item, index) in btn"
-            :key="item.index"
-          >
-            <span class="button-text">{{ item }}</span></v-btn
-          >
-        </v-flex>
-        <v-flex
-          class="fiture"
-          xs10
-          md4
-          lg4
-          sm4
-          text-center
-          v-for="(item, index) in features"
-          :key="item.index"
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-flex>
+      <v-flex xs12 sm6 md6 lg6 text-start class="mt-8">
+        <v-layout
+          row
+          wrap
+          justify-center
+          style="margin-left: 2%; margin-top: 10%; margin-right: 10%"
         >
-          <div
-            v-if="index <= 5 && explore == false && filterItem.length == 0"
-            class="justify-center mx-2 my-2"
-          >
-            <v-hover v-slot="{ hover }" open-delay="200">
-              <v-card
-                min-height="370px"
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                class="mx-auto"
+          <v-flex xs12 sm12 md12 lg12 text-start class="">
+            <v-card color="blue darken-1" dark>
+              <div
+                data-aos="zoom-in-up"
+                class="d-flex flex-no-wrap justify-space-between"
               >
-                <br />
-                <v-img
-                  class="my-2 mt-7"
-                  style="margin: auto"
-                  min-width="80"
-                  max-width="80"
-                  :src="item.img"
-                >
-                </v-img>
-                <h3>{{ item.title }}</h3>
-                <p class="my-2" style="height: 120px; overflow: hidden">
-                  {{ item.description }}
-                </p>
-                <v-layout row wrap justify-start>
-                  <v-flex text-start>
-                    <v-btn small text class="btn-design button3 my-4"
-                      >lern more <v-icon small>mdi-arrow-right</v-icon></v-btn
-                    >
-                  </v-flex>
-                </v-layout>
-              </v-card>
-            </v-hover>
-          </div>
+                <div>
+                  <v-card-subtitle v-text="text3"></v-card-subtitle>
+                  <v-card-title class="text-h5" v-text="text4"></v-card-title>
+                </div>
 
-          <div
-            v-if="explore == true && filterItem.length == 0"
-            class="justify-center mx-2 my-2"
-          >
-            <v-hover v-slot="{ hover }" open-delay="200">
-              <v-card
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                class="mx-auto"
-                min-height="370px"
-              >
-                <br />
-                <v-img
-                  class="my-2"
-                  style="margin: auto"
-                  min-width="80"
-                  max-width="80"
-                  :src="item.img"
-                >
-                </v-img>
-                <h3>{{ item.title }}</h3>
-                <p class="my-2" style="height: 120px; overflow: hidden">
-                  {{ item.description }}
+                <v-avatar class="ma-3" size="125" tile>
+                  <v-img :src="ed"></v-img>
+                </v-avatar>
+              </div>
+            </v-card>
+            <v-card>
+              <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <p class="my-1">
+                  We are going to start a new year with a dream of building a
+                  society where the people will able to overcome all of barriers
+                  in the path of leading a life of full enjoyment of rights
+                  recognized by the country.During the last financial year,
+                  particularly in the later part of this reporting period
+                  ranging from March to June 2020, we came across some
+                  unexpected and deadly events like, COVID-19, Amphan, a super
+                  cyclone etc. that jeopardized the normal life of our people.
+                  Even today we are struggling for coping with the situation.
+                  Amid huge obstacles and barriers, we could not stop our
+                  journey and are constantly providing our support to the people
+                  in distress. We are continuing our field operation with our
+                  planned interventions among the targeted community people.
+                  This Annual Report has actually depicted the intervention
+                  package and achievements that we accomplished and attained
+                  with the fabulous support of all relevant
                 </p>
-                <v-layout row wrap justify-start>
-                  <v-flex text-start>
-                    <v-btn small text class="btn-design button3 my-4"
-                      >lern more <v-icon small>mdi-arrow-right</v-icon></v-btn
-                    >
-                  </v-flex>
-                </v-layout>
-              </v-card>
-            </v-hover>
-          </div>
-        </v-flex>
-      </v-layout>
-      <v-layout row wrap justify-center class="my-3">
-        <v-flex xs10 sm4 md43 lg4>
-          <v-btn
-            @click="exploreMethode"
-            small
-            v-if="explore == false && filterItem.length == 0"
-            class="my-4 white--text"
-            block
-            color="red accent-3"
-          >
-            Explore More</v-btn
-          >
-          <v-btn
-            @click="exploreMethodeMin"
-            small
-            v-if="explore == true && filterItem.length == 0"
-            class="my-4 white--text"
-            block
-            color="red accent-3"
-          >
-            Show less</v-btn
-          >
-        </v-flex>
-      </v-layout>
-      <v-layout row wrap justify-xs-center justify-start class="my-4">
-        <v-flex
-          class="fiture"
-          xs10
-          md4
-          lg4
-          sm4
-          text-center
-          v-for="(i, index) in filterItem"
-          :key="i.index"
+                <v-btn
+                  style="margin-left: 70%"
+                  text
+                  class="btn-design1 button1 my-3"
+                  >Read More <v-icon>mdi-arrow-right</v-icon></v-btn
+                >
+              </div>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-flex>
+    </v-layout>
+    <v-divider class="mt-9 hideLg"></v-divider>
+    <v-layout row wrap justify-center style="margin-top: 7%">
+      <v-flex class="header_text" xs12 md12 lg12 sm12 text-center>
+        <h1
+          style="
+            margin-bottom: 1% !important;
+            text-align: center;
+            color: black;
+            font-weight: 800;
+          "
         >
-          <div
-            v-if="explore === false"
-            text-center
-            class="justify-center mr-2 my-2"
-          >
-            <v-hover v-slot="{ hover }" open-delay="200">
-              <v-card
-                min-height="370px"
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                class="mx-auto"
-              >
-                <br />
-                <v-img
-                  class="my-2"
-                  style="margin: auto"
-                  min-width="80"
-                  max-width="80"
-                  :src="i.img"
-                >
-                </v-img>
-                <p style="display: none">{{ index }}</p>
-                <h3>{{ i.title }}</h3>
-                <p class="my-2" style="height: 120px; overflow: hidden">
-                  {{ i.description }}
-                </p>
-                <v-layout row wrap justify-start>
-                  <v-flex text-start>
-                    <v-btn small text class="btn-design button3 my-4"
-                      >lern more <v-icon small>mdi-arrow-right</v-icon></v-btn
-                    >
-                  </v-flex>
-                </v-layout>
-              </v-card>
-            </v-hover>
-          </div>
-        </v-flex>
-      </v-layout>
-    
+          Gellary
+        </h1>
+      </v-flex>
+    </v-layout>
+
     <Footer></Footer>
   </div>
 </template>
@@ -387,29 +264,32 @@ export default {
       explore: false,
       typeCheck: false,
       indexValue: 0,
-      text1:"MESSAGE FROM THE ",
-      text2:"CHAIRMAN ",
+      text1: "MESSAGE FROM THE ",
+      text2: "CHAIRMAN ",
+      text3: "MESSAGE FROM THE ",
+      text4: "EXECUTIVE DIRECTOR  ",
       filterItem: [],
       type: "",
       cr: require("@/assets/img/slider2.png"),
+      ed: require("@/assets/img/slider3.png"),
 
       logo: require("@/assets/img/logo.png"),
       img2: require("@/assets/img/img2.png"),
       sliderData: [
         {
-          img: require("@/assets/img/slider1.png"),
+          img: require("@/assets/img/slider1.jpg"),
           title: "Vision",
           description:
             "Social Upliftment Society (SUS) seeks a country of social justice, where poverty has been overcome and people live in dignity and security.",
         },
         {
-          img: require("@/assets/img/slider2.png"),
+          img: require("@/assets/img/slider2.jpg"),
           title: "Mission",
           description:
             "SUS aims at building socially and economically empowered society where the people will be able to plan, prioritize and implement their own development programs.",
         },
         {
-          img: require("@/assets/img/slider3.png"),
+          img: require("@/assets/img/slider3.jpg"),
           title: "Goal",
           description:
             "To ensure effective participation of the disadvantaged community people in the process of planning and implementing various development projects and programs both at the local and national levels",
@@ -791,6 +671,19 @@ export default {
     margin-right: 10%;
     margin-bottom: 10%;
   }
+  .header_text h1 {
+    font-family: Century Gothic;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 35px;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: #0d0d0e;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 60px;
+    letter-spacing: 0;
+  }
   h1 {
     font-family: Century Gothic;
     margin-top: 3%;
@@ -860,6 +753,17 @@ export default {
   }
 }
 @media only screen and (min-width: 601px) {
+  .header_text h1 {
+    font-family: Century Gothic;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 35px;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: #0d0d0e;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
   .hoverEfect {
     color: rgb(red, green, blue);
     font-family: Century Gothic;

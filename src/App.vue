@@ -25,15 +25,11 @@
       <v-spacer class="d-md-none d-lg-flex"></v-spacer>
 
       <span v-for="(item, index) in nabItem" :key="item.index">
-        
         <v-toolbar-title
-         
           v-if="index < 4"
           class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
         >
-       
           <span
-         
             style="cursor: pointer"
             :class="
               scrollPosition > 702 && index + 1 === indexValue
@@ -47,7 +43,7 @@
             class="nav"
           >
             <v-menu open-on-hover top offset-y>
-              <template  v-slot:activator="{ on, attrs }">
+              <template v-slot:activator="{ on, attrs }">
                 <v-btn
                   style="background-color: transparent"
                   dark
@@ -243,7 +239,6 @@ export default {
     },
     buttonClick(e, j) {
       console.log("click", j, e);
-     
     },
     onRoute(e) {
       console.log(e);

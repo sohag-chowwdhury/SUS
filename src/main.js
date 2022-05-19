@@ -48,6 +48,9 @@ Vue.component('Footer', footer)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
