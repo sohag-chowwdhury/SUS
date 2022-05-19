@@ -1,6 +1,5 @@
 <template>
-  <div class="mt-3">
+  <div>
     <legal></legal>
-    <origin></origin>
   </div>
 </template>
