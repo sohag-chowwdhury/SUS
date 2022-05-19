@@ -1,76 +1,74 @@
 <template>
  <v-app > 
    
-    <v-app-bar height="45px" :color=" scrollPosition > 702  ? 'white': '' || scrollPosition < 701 &&  scrollPosition > 95 ? 'black': '' || scrollPosition < 94 ? 'transparent' :'' " elevation="0" app >
+    <v-app-bar height="45px" :color=" scrollPosition > 702  ? 'light-blue darken-4': '' || scrollPosition < 701 &&  scrollPosition > 95 ? 'light-blue darken-3': '' || scrollPosition < 94 ? 'transparent' :'' " elevation="0" app >
       <v-app-bar-nav-icon class="hidden-sm-and-up"  color="grey lighten-2" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-app-bar-nav-icon  class="d-none d-sm-flex  mx-lg-7  mx-md-2 mx-sm-1"><v-img :src="img" max-width="40px"></v-img></v-app-bar-nav-icon> 
-      
-    <span  v-for="(item ,index) in nabItem"  :key="item.index"  >  <v-toolbar-title @click="buttonClick(index)"  v-if="index < 4"  class="white--text hidden  mx-lg-4  mx-md-2 mx-sm-1"> <span  style="cursor: pointer"
-      :class="   scrollPosition > 702 && index+1 === indexValue ? 'seleted' :'' || scrollPosition < 701 && index+1 === indexValue ? 'seleted' :'' || scrollPosition > 702 ? 'nav1': ''" class="nav" > {{item}}  </span></v-toolbar-title> </span>
-      
-
       <v-spacer class="d-md-none d-lg-flex"></v-spacer>
-     
-       <v-btn icon class="d-none d-sm-flex  mx-lg-4  mx-md-2 mx-sm-1">
-         <span class="mt-1" style="font-size: 1.7em; color: #EE2B47;">
-   <i class="fas fa-search"></i>
-          </span>
-      
-      </v-btn> 
-       <v-toolbar-title class="white--text  mx-4"  >
-         
-         <v-menu
+
+    <span  v-for="(item ,index) in nabItem"  :key="item.index"  >  <v-toolbar-title  @click="buttonClick(index, item.to)"  v-if="index < 4"  class="white--text hidden  mx-lg-1  mx-md-1 mx-sm-1"> <span  style="cursor: pointer"
+      :class="   scrollPosition > 702 && index+1 === indexValue ? 'seleted' :'' || scrollPosition < 701 && index+1 === indexValue ? 'seleted' :'' || scrollPosition > 702 ? 'nav1': ''" class="nav" > 
+      <v-menu
       open-on-hover
       top
       offset-y
     >
-      <template v-slot:activator="{ on, attrs }">
+      <template  v-slot:activator="{ on, attrs }">
+        <v-btn
         
-        <span  color="primary"
+          style="background-color: transparent;"
           dark
           v-bind="attrs"
-          v-on="on" >  <span    v-for="(item ,index) in nabItem"  :key="item.index"  >   <v-toolbar-title @click="buttonClick(index)"  v-if="index == 4"  class="white--text hidden mx-lg-4  mx-md-2 mx-sm-1 "> <span  
-      :class="   scrollPosition > 702 && index+1 === indexValue ? 'seleted' :'' || scrollPosition < 701 && index+1 === indexValue ? 'seleted' :'' || scrollPosition > 702 ? 'nav1': ''" class="nav" >{{item}}  </span></v-toolbar-title> </span> </span>
+          v-on="on"
+        
        
+        >
+          {{item.name}}
+        </v-btn>
       </template>
 
-      <v-list class="mt-10 rounded-lg" style="overflow: hidden !important;" >
-        <v-list-item >
-        <v-layout row wrap justify-center style="width:320px !important; height:380px !important; ">
-          <v-flex xs10 sm10 lg10 md10>
-              <h4 class="mt-3">Learn</h4>
-              <p class="mt-3" style="font-size:0.9em; font-family: Century Gothic;">Get the Knowledge you need to build a successful restaurant online sales channel with Resappy.</p>  
-          </v-flex>
-           <v-flex xs10 sm10 lg10 md10 class="">
-              <v-layout row wrap class="ml-1">
-                  <v-flex  xs8 sm8 lg8 md8 text-start>
-                      <h4 >About</h4>
-                      <h4>Help Center</h4>
-                      <h4>Videos</h4>
-                      <h4>Customer Service </h4>
-                       <h4>Features</h4>
-                        <h4>Why sell online</h4>
-                         <h4>Solutions by industry</h4>
-                      
-                  </v-flex>
-                   <v-flex  xs4 sm4 lg4 md4 text-start>
-                     <h4>Blog</h4>
-                      <h4>Guide</h4>
-                      <h4>Pods</h4>
-                       <h4>Demo</h4>               
-                    
-                  </v-flex>
-              </v-layout>
-           </v-flex>
-        </v-layout>
+      <v-list :color="item.submanu === true ? 'light-blue darken-4':'light-blue darken-4'" style="margin-top:33px" min-width="10%">
+        <v-list-item
+          v-for="(i, index) in item.subManu"
+          :key="index"
+        >
+          <v-list-item-title  style="color:#FFFFFF;">{{ i.name }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
-      </v-toolbar-title>
-      <span  v-for="(item ,index) in nabItem"  :key="item.index"  >  <v-toolbar-title @click="buttonClick(index)"  v-if="index > 4"  class="white--text hidden   mx-lg-4  mx-md-2 mx-sm-1"> <span style="cursor: pointer"
-      :class="   scrollPosition > 702 && index+1 === indexValue ? 'seleted' :'' || scrollPosition < 701 && index+1 === indexValue ? 'seleted' :'' || scrollPosition > 702 ? 'nav1': ''" class="nav" >{{item}}</span></v-toolbar-title> </span>
+      
+       </span></v-toolbar-title> </span>
+      <span  v-for="(item ,index) in nabItem"  :key="item.index"  >  <v-toolbar-title @click="buttonClick(index)"  v-if="index > 3"  class="white--text hidden   mx-lg-4  mx-md-2 mx-sm-1"> <span style="cursor: pointer"
+      :class="   scrollPosition > 702 && index+1 === indexValue ? 'seleted' :'' || scrollPosition < 701 && index+1 === indexValue ? 'seleted' :'' || scrollPosition > 702 ? 'nav1': ''" class="nav" >
+      
+      <v-menu
+      open-on-hover
+      top
+      offset-y
+    >
+      <template  v-slot:activator="{ on, attrs }">
+        <v-btn
+          style="background-color: transparent;"
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          {{item.name}}
+        </v-btn>
+      </template>
+
+      <v-list :color="item.submanu === true ? 'light-blue darken-4':'light-blue darken-4'" style="margin-top:33px" min-width="10%">
+        <v-list-item
+          v-for="(i, index) in item.subManu"
+          :key="index"
+        >
+          <v-list-item-title style="color:#FFFFFF;">{{ i.name }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+      </span></v-toolbar-title> </span>
      
-        <v-btn small class="hide rounded-lg mt-1 "  :color=" scrollPosition > 702  ? 'grey darken-2': '' || scrollPosition < 701 ? 'error': ''"> <email  class="hidden mx-0 mt-1" > </email></v-btn>
+        
      
     </v-app-bar>
     <v-navigation-drawer
@@ -84,55 +82,19 @@
          <span v-for="(item,index) in nabItem" :key="item.index" >
         <v-list-item
         
-         @click="buttonClick(index)"  v-if="index<4"  class="mx-4">
-          <span :class="index +1 == indexValue ? 'seleted':''">{{item}} </span>
+         @click="buttonClick(index)"  v-if="index<3"  class="mx-4">
+          <span :class="index +1 == indexValue ? 'seleted':''">{{item.name}} </span>
         </v-list-item>
         </span>
-        <v-list-group 
-        >
-          <v-list-item  @click="buttonClick(11)" slot="activator">
-           <span :class="12 == indexValue ? 'seleted':''">  Lern</span>
-          </v-list-item>
-         <v-layout row wrap justify-center class="my-4 mx-2">
-          <v-flex xs10 sm10 lg10 md10 class="minDropdown">
-            
-              <p class="mt-3" style="font-size:0.9em; font-family: Century Gothic;">Get the Knowledge you need to build a successful restaurant online sales channel with Resappy.</p>  
-          </v-flex>
-           <v-flex xs10 sm10 lg10 md10 class="mt-3">
-              <v-layout row wrap class="ml-1">
-                  <v-flex  xs8 sm8 lg8 md8 text-start>
-                      <h4 >About</h4>
-                      <h4>Help Center</h4>
-                      <h4>Videos</h4>
-                      <h4>Customer Service </h4>
-                       <h4>Features</h4>
-                        <h4>Why sell online</h4>
-                         <h4>Solutions by industry</h4>
-                      
-                  </v-flex>
-                   <v-flex  xs4 sm4 lg4 md4 text-start>
-                     <h4>Blog</h4>
-                      <h4>Guide</h4>
-                      <h4>Pods</h4>
-                       <h4>Demo</h4>               
-                    
-                  </v-flex>
-                  <v-divider></v-divider>
-              </v-layout>
-           </v-flex>
-            
-        </v-layout>
-          
-          
-        </v-list-group>
+        
          <span v-for="(item,index) in nabItem" :key="item.index" >
         <v-list-item  @click="buttonClick(index)" v-if="index>4"  class="mx-4">
-          <span :class="index +1 == indexValue ? 'seleted':''">{{item}} </span>
+          <span :class="index +1 == indexValue ? 'seleted':''">{{item.name}} </span>
         </v-list-item>
         </span>
       </v-list>
        <v-divider></v-divider>
-      <email></email>
+    
     </v-navigation-drawer>
     
      <main>
@@ -147,7 +109,47 @@ export default {
         drawer: false,
         marker:false,
         indexValue:0,
-        nabItem:['Sell', 'Market' ,'Manage', 'عربي',  'Learn',  'Pricing','Login'],
+        nabItem:[ 
+                   {name :"Home", submanu:false, to:'/', },
+                   {name :"About us",submanu:true, to:'/about', subManu:[
+                      {name :" Origin of the organization", to:'/origin'},
+                      {name :"Legal Status", to:'/legal'},
+                      {name :"Vision, Mission, Goal", to:'/vision'},
+                      {name :"Governance Structure", to:'/governance'},
+                      {name :"Management Structure", to:'/management'},
+                      {name :"Key Programmatic areas", to:'/areas'},
+                      {name :"SUS Stakeholders / Clients", to:'/clients'},
+                      {name :"Geographical Coverage", to:'/coverage'},
+                      {name :"Linkage and Network", to:'/linkage'},
+                      {name :"Achievement and Milestone of SUS", to:'/achievement'},
+                   ]},
+
+
+                    {name :"Infrastructure", submanu:true, to:'/infrastructure', subManu:[
+                      {name :"SUS Training Center", to:'/center'},
+                      {name :"Animal Health Care Centers", to:'/health_care'},
+                      {name :"Milk Chilling Plant", to:'/chilling_plant'},
+                      {name :" Training and Rehabilitation Center", to:'/rehabilitation'},
+                      {name :"Solid Paper Board Packaging Center", to:'/packaging_center'},
+                      {name :"Nursery Development Centre ", to:'/nursery_center'},
+                    
+                   ]},
+                   {name :"Archive", submanu:true, to:'/archive', subManu:[
+                      {name :"Annual Reports", to:'/center'},
+                      {name :"Audit Reports", to:'/health_care'},
+                      {name :"All Publications", to:'/chilling_plant'},
+                      {name :"Case studies", to:'/rehabilitation'},
+                      {name :"Newsletter", to:'/packaging_center'},
+                    
+                    
+                   ]},
+                  {name :"Projects", submanu:false, to:'/project', }, 
+                  {name :"Budget", submanu:false, to:'/budget'},
+                  {name :"Career",submanu:false, to:'/career', }, 
+                  {name :"Photo Gallery", submanu:false, to:'/photo'},
+                  {name :"News",submanu:false, to:'/news'},
+                    {name :"Contact us", to:'/Contact'}
+                       ],
          group: null,
          dynamic: '',
          scrollPosition: null,
@@ -159,16 +161,22 @@ export default {
     updateScroll() {
        this.scrollPosition = window.scrollY
     },
-    buttonClick(e){
-      this.indexValue = e +1
+    buttonClick(e,j){
+      console.log('click',e)
+      this.$route.push(j)
+    },
+    onRoute(e){
+      console.log(e)
     },
       mouseover(e){
+
        this.indexValue = e +1
        console.log(this.indexValue)
     },    
     mouseleave(){
       this.indexValue = 0
-    }
+    },
+    
 },
  watch: {
       group () {
@@ -214,7 +222,7 @@ mounted() {
 
 .nav{
   font-size: 0.78em;
-  color: rgb(250, 242, 242);
+  color: rgb(5, 5, 5);
      font-family: Century Gothic;
 }
 .nav1{

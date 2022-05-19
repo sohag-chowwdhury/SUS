@@ -1,0 +1,9 @@
+<template>
+  <div>
+    <b-row>
+      <b-col>
+        <h1>NetWork</h1>
+      </b-col>
+    </b-row>
+  </div>
+</template>
