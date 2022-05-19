@@ -25,12 +25,24 @@
       <v-spacer class="d-md-none d-lg-flex"></v-spacer>
 
       <span v-for="(item, index) in nabItem" :key="item.index">
+<<<<<<< HEAD
         <v-toolbar-title
           @click="buttonClick(index, item.to)"
           v-if="index < 4"
           class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
         >
           <span
+=======
+        
+        <v-toolbar-title
+         
+          v-if="index < 4"
+          class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
+        >
+       
+          <span
+         
+>>>>>>> master
             style="cursor: pointer"
             :class="
               scrollPosition > 702 && index + 1 === indexValue
@@ -44,12 +56,20 @@
             class="nav"
           >
             <v-menu open-on-hover top offset-y>
+<<<<<<< HEAD
               <template v-slot:activator="{ on, attrs }">
+=======
+              <template  v-slot:activator="{ on, attrs }">
+>>>>>>> master
                 <v-btn
                   style="background-color: transparent"
                   dark
                   v-bind="attrs"
                   v-on="on"
+<<<<<<< HEAD
+=======
+                  @click="buttonClick(index, item.to)"
+>>>>>>> master
                 >
                   {{ item.name }}
                 </v-btn>
@@ -238,8 +258,13 @@ export default {
       this.scrollPosition = window.scrollY;
     },
     buttonClick(e, j) {
+<<<<<<< HEAD
       console.log("click", e);
       this.$route.push(j);
+=======
+      console.log("click", j, e);
+     
+>>>>>>> master
     },
     onRoute(e) {
       console.log(e);
@@ -262,7 +287,11 @@ export default {
   },
 };
 </script>
+<<<<<<< HEAD
 <style>
+=======
+<style >
+>>>>>>> master
 @media only screen and (min-width: 601px) {
   .seleted {
     color: #ef3c55 !important;
