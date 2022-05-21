@@ -10,6 +10,9 @@ import SusClients from "../views/SusClients.vue";
 import Geographical from "../views/Geographical.vue";
 import Network from "../views/Network.vue";
 import Achievement from "../views/Achievement.vue";
+import Contact from "../views/Contact.vue";
+import Gallery from "../views/Gallery.vue";
+
 
 Vue.use(VueRouter);
 
@@ -63,6 +66,16 @@ const routes = [
     path: "/achievement",
     name: "Achievement",
     component: Achievement,
+  },
+  {
+    path: "/Contact",
+    name: "Contact",
+    component: Contact,
+  },
+  {
+    path: "/photo",
+    name: "Gallery",
+    component: Gallery,
   },
 ];
 

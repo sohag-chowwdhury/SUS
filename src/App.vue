@@ -20,15 +20,19 @@
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-app-bar-nav-icon class="d-none d-sm-flex mx-lg-7 mx-md-2 mx-sm-1"
-        ><v-img :src="img" max-width="40px"></v-img
+        ><v-img :src="img" max-width="38px"></v-img
       ></v-app-bar-nav-icon>
       <v-spacer class="d-md-none d-lg-flex"></v-spacer>
 
       <span v-for="(item, index) in nabItem" :key="item.index">
         <v-toolbar-title
 <<<<<<< HEAD
+<<<<<<< HEAD
           @click="buttonClick(index, item.to)"
 =======
+>>>>>>> master
+=======
+          @click="buttonClick( item.to)"
 >>>>>>> master
           v-if="index < 4"
           class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
@@ -46,14 +50,13 @@
             "
             class="nav"
           >
-            <v-menu open-on-hover top offset-y>
+            <v-menu open-on-hover bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
                   style="background-color: transparent"
                   dark
                   v-bind="attrs"
                   v-on="on"
-                  @click="buttonClick(index, item.to)"
                 >
                   {{ item.name }}
                 </v-btn>
@@ -65,7 +68,7 @@
                     ? 'light-blue darken-4'
                     : 'light-blue darken-4'
                 "
-                style="margin-top: 33px"
+                style="margin-top: 0px"
                 min-width="10%"
               >
                 <v-list-item v-for="(i, index) in item.subManu" :key="index">
@@ -78,11 +81,12 @@
           </span></v-toolbar-title
         >
       </span>
+      
       <span v-for="(item, index) in nabItem" :key="item.index">
         <v-toolbar-title
-          @click="buttonClick(index)"
+          @click="buttonClick( item.to)"
           v-if="index > 3"
-          class="white--text hidden mx-lg-4 mx-md-2 mx-sm-1"
+          class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
         >
           <span
             style="cursor: pointer"
@@ -97,7 +101,7 @@
             "
             class="nav"
           >
-            <v-menu open-on-hover top offset-y>
+            <v-menu open-on-hover bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
                   style="background-color: transparent"
@@ -115,7 +119,7 @@
                     ? 'light-blue darken-4'
                     : 'light-blue darken-4'
                 "
-                style="margin-top: 33px"
+                style="margin-top: 0px"
                 min-width="10%"
               >
                 <v-list-item v-for="(i, index) in item.subManu" :key="index">
@@ -162,6 +166,8 @@
 
     <main>
       <router-view></router-view>
+      <contact></contact>
+      <Footer></Footer>
     </main>
   </v-app>
 </template>
@@ -233,7 +239,7 @@ export default {
       group: null,
       dynamic: "",
       scrollPosition: null,
-      img: require("@/assets/img/logo.svg"),
+      img: require("@/assets/img/logo2.png"),
       img1: require("@/assets/img/footer.png"),
     };
   },
@@ -241,8 +247,8 @@ export default {
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
-    buttonClick(e, j) {
-      console.log("click", j, e);
+    buttonClick(e) {
+       this.$router.push(e)
     },
     onRoute(e) {
       console.log(e);

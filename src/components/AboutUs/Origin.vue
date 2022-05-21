@@ -1,45 +1,82 @@
-const visionText=[ ]
 
 <template>
-  <div style="margin-top: 2%">
-    <b-container>
-      <b-card>
-        <div>
-          <h4 class="text-uppercase">Origin of the organization</h4>
-          <p>
-            Social Upliftment Society (SUS) is a women-led Non-Political,
-            Not-for-Profit and Non-Governmental Organization (NGO) which
-            formally started its journey in the development sector of Bangladesh
-            in the year of 1990 with an aim of improving the socio-economic
-            condition of the disadvantaged and under privileged people with a
-            clear focus on women empowerment.
-          </p>
-          <p>
-            In 1988 Bangladesh faced a devastating flood that engulfed two
-            thirds of the country and at that time, the surrounding Upazilas of
-            Dhaka District went under flood water. In this situation, the
-            Executive Director of Social Upliftment Society (SUS), Hamida Begum
-            along with some local volunteers came forward with her generous
-            heart to reduce the untold sufferings of the flood affected people
-            and started for carrying out relief and rehabilitation activities
-            among the distressed people. In 1989, SUS started its rehabilitation
-            works with a support received from OXFAM-UK for the flood affected
-            people. However, after successful completion of relief and
-            rehabilitation works during 1988 and 1989, SUS finally got
-            registered as an NGO with the Directorate of Social Services in
-            1990. This was the formal beginning of SUS in Bangladesh.
-          </p>
-          <p>
-            In 1989, SUS started its rehabilitation works with a support
-            received from OXFAM-UK for the flood affected people. However, after
-            successful completion of relief and rehabilitation works during 1988
-            and 1989, SUS finally got registered as an NGO with the Directorate
-            of Social Services in 1990. This was the formal beginning of SUS in
-            Bangladesh.
-          </p>
-        </div></b-card
+
+  <div style="margin-top: 4%; margin: 5% % 0% 0%">
+    <div
+      class="header"
+      :style="{
+        'background-image':
+          'url(' + require('@/assets/img/E-13.jpg') + ')',
+      }"
+    >
+      <v-layout
+        v-on:mouseover="mouseover"
+        v-on:mouseleave="mouseleave"
+        class="overly"
+        row
+        wrap
+        justify-center
       >
-      <b-row class="my-3">
+        <v-flex xs11 sm11 md11 lg11 text-center>
+          <div  class="origin" data-aos="fade-up">
+            <h2>
+              Origin of the organization
+            </h2>
+          </div>
+          <div class="origin"  data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+              <p >
+              Social Upliftment Society (SUS) is a women-led Non-Political,
+              Not-for-Profit and Non-Governmental Organization (NGO) which
+              formally started its journey in the development sector of
+              Bangladesh in the year of 1990 with an aim of improving the
+              socio-economic condition of the disadvantaged and under privileged
+              people with a clear focus on women empowerment.
+            </p>
+           </div>
+            <div class="origin" data-aos="fade-down" data-aos-anchor-placement="top-bottom">
+            <p>
+              In 1988 Bangladesh faced a devastating flood that engulfed two
+              thirds of the country and at that time, the surrounding Upazilas
+              of Dhaka District went under flood water. In this situation, the
+              Executive Director of Social Upliftment Society (SUS), Hamida
+              Begum along with some local volunteers came forward with her
+              generous heart to reduce the untold sufferings of the flood
+              affected people and started for carrying out relief and
+              rehabilitation activities among the distressed people. In 1989,
+              SUS started its rehabilitation works with a support received from
+              OXFAM-UK for the flood affected people. However, after successful
+              completion of relief and rehabilitation works during 1988 and
+              1989, SUS finally got registered as an NGO with the Directorate of
+              Social Services in 1990. This was the formal beginning of SUS in
+              Bangladesh.
+            </p>
+            </div>
+            <div class="origin" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <p>
+              In 1989, SUS started its rehabilitation works with a support
+              received from OXFAM-UK for the flood affected people. However,
+              after successful completion of relief and rehabilitation works
+              during 1988 and 1989, SUS finally got registered as an NGO with
+              the Directorate of Social Services in 1990. This was the formal
+              beginning of SUS in Bangladesh.
+            </p>
+            </div>
+            
+        </v-flex>
+      </v-layout>
+    </div>
+    <svg
+      style="margin-top: -5%"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+    >
+      <path
+        fill="#0099ff"
+        fill-opacity="1"
+        d="M0,160L40,149.3C80,139,160,117,240,122.7C320,128,400,160,480,197.3C560,235,640,277,720,288C800,299,880,277,960,256C1040,235,1120,213,1200,218.7C1280,224,1360,256,1400,272L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
+      ></path>
+    </svg>
+    <!-- <b-row class="my-3">
         <b-col>
           <b-card>
             <table class="table">
@@ -67,8 +104,7 @@ const visionText=[ ]
             </table>
           </b-card>
         </b-col>
-      </b-row></b-container
-    >
+      </b-row> -->
   </div>
 </template>
 
@@ -76,6 +112,7 @@ const visionText=[ ]
 export default {
   data() {
     return {
+      img: require("@/assets/img/slider1.jpg"),
       table: [
         {
           title: "Name",
@@ -209,19 +246,58 @@ export default {
 </script>
 
 <style scoped>
+ .header {
+    height: 500px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .hideLg {
+    display: none !important;
+  }
+ 
+.overly {
+    background: rgba(29, 35, 88, 0.8);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 .table_nav {
   background: #0d47a1 !important;
   color: white;
 }
-
+.origin h2 {
+  font-size: 2.4em;
+  font-family: Century Gothic; 
+  margin: 20px 0;
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+}
+.origin p {
+  font-size: 1.2em;
+  font-family: Century Gothic; 
+  margin: 30px 0;
+  text-align: start;
+  text-align: justify;
+   color: #ffffff;
+  
+}
 h4 {
   font-size: 0.8em;
   font-family: Century Gothic;
-  opacity: 0.99;
+  
   margin: 20px 0;
   font-size: 2em;
-  opacity: 0.8;
-  color: #0004fc;
+  color: #ffffff;
+  text-align: center;
 }
 
 p {
@@ -231,6 +307,7 @@ p {
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 20px;
-  color: #3e3e4a;
+  color: #0f0f0f;
+   text-align: justify;
 }
 </style>

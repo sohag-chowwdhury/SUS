@@ -1,14 +1,49 @@
 <template>
-  <div style="margin-top: 5%">
-    <b-container>
-      <b-card>
-        <h4 class="text-uppercase">SUS Stakeholders / Clients</h4>
-        <div v-for="(i, index) in table" :key="index" style="margin-top: 5%">
-          <h5 class="text-uppercase">{{ i.title }}</h5>
-          <p>{{ i.description }}</p>
-        </div></b-card
-      >
-    </b-container>
+  <div style="margin: 5% 5% 5% 5%">
+
+     <v-layout row wrap justify-center>
+        <v-flex class="header_text" xs12 md12 lg12 sm12 text-center>
+        <div data-aos="fade-right">
+          <h1
+            style="
+              margin-bottom: 1% !important;
+              text-align: center;
+              color: #000000 !important;
+              font-weight: 800;
+            "
+          >
+           SUS Stakeholders / Clients
+          </h1>
+        </div>
+      </v-flex>
+     
+      <v-flex xs12 sm12 md12 lg12 xl12>
+          <v-layout class="mx-1 my-2" row wrap justify-center>
+            <v-flex xs12 sm12 md4 lg4 xl4 v-for="(i, indexIn) in table" :key="indexIn" >
+                <b-card v-if="indexIn == 0"  style="height:350px; background:#448AFF;">
+                   <div data-aos="flip-right">
+                     <h3>{{i.title}}</h3>
+                      <p>{{i.description}}</p>
+                   </div>
+                </b-card>
+                <b-card v-if="indexIn == 1"  style="height:350px;background:#2979FF;">
+                  <div data-aos="zoom-in">
+                     <h3>{{i.title}}</h3>
+                <p>{{i.description}}</p>
+                  </div>
+                </b-card>
+                <b-card v-if="indexIn == 2"  style="height:350px; background:#2962FF;">
+                    <div data-aos="flip-left">
+                      <h3>{{i.title}}</h3>
+                     <p>{{i.description}}</p>
+                    </div>
+                </b-card>
+            </v-flex>
+          </v-layout>
+      </v-flex>
+    </v-layout>
+
+    
   </div>
 </template>
 <script>
@@ -38,23 +73,36 @@ export default {
 </script>
 
 <style scoped>
-h4 {
+
+
+h3 {
   font-size: 0.8em;
   font-family: Century Gothic;
   opacity: 0.99;
   margin: 20px 0;
-  font-size: 2em;
-  opacity: 0.8;
-  color: #0004fc;
+  font-size: 1.3em;
+  
+  color: #fefeff;
 }
-
+h4 {
+  font-size: 0.8em;
+  font-family: Century Gothic;
+  opacity: 0.99;
+  font-size: 1.9em;
+ 
+  color: #fbfbff;
+}
 p {
   font-size: 1em !important;
   font-family: Century Gothic;
   opacity: 0.99;
-  font-weight: 500;
   letter-spacing: 1px;
+  font-size: .9em;
   line-height: 20px;
-  color: #3e3e4a;
+  color: hsl(0, 100%, 100%);
+}
+
+.innerText{
+  font-weight: bold;
 }
 </style>

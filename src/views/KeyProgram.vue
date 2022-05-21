@@ -1,5 +1,5 @@
 <template>
   <div>
-    <keyProgram></keyProgram>
+    <Key-program></Key-program>
   </div>
 </template>

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
@@ -51,6 +52,8 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 =======
+=======
+>>>>>>> master
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
@@ -75,8 +78,16 @@ import SolidPaperBoard from './components/Infrastructure/SolidPaperBoard.vue'
 import TrainingCenter from './components/Infrastructure/TrainingCenter.vue'
 import TrainingRehabilitationCenter from './components/Infrastructure/TrainingRehabilitationCenter.vue'
 
-import BootstrapVue from 'bootstrap-vue'
+import Contact from './components/Share/Contact.vue'
+import ContactV from './components/Contact/ContactV.vue'
 
+import Gallery from './components/Gallery/Gallery.vue'
+
+
+
+
+import BootstrapVue from 'bootstrap-vue'
+import * as VueGoogleMaps from "vue2-google-maps"
 Vue.component('achievement', Achievement)
 Vue.component('geographical', Geographical)
 Vue.component('governance', Governance)
@@ -94,18 +105,33 @@ Vue.component('nursery-development-centre', NurseryDevelopmentCentre)
 Vue.component('solid-paper-board', SolidPaperBoard)
 Vue.component('training-center', TrainingCenter)
 Vue.component('training-rehabilitation-center', TrainingRehabilitationCenter)
+Vue.component('contact', Contact)
+Vue.component('inner-contatc', ContactV)
+Vue.component('gallery', Gallery)
 
 
+
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyDQaMSz3EAEWnTN3M0h8jv3oHVDldO9TS0",
+    libraries: "places"
+  }
+});
 Vue.component('Footer', footer)
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
+<<<<<<< HEAD
+>>>>>>> master
+=======
+
 >>>>>>> master
 
 new Vue({

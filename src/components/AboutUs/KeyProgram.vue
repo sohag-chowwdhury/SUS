@@ -1,42 +1,79 @@
 <template>
-  <div style="margin-top: 5%">
-    <b-container>
-      <b-card>
-        <div>
-          <h4 class="text-uppercase">{{ table.title }}</h4>
-          <p>{{ table.description }}</p>
-        </div></b-card
+ <div>
+  <div style="margin:5% 5% 5% 5%">
+       <v-layout row wrap justify-center>
+         <v-flex class="header_text" xs12 md12 lg12 sm12 text-center>
+        <div data-aos="zoom-in">
+          <h1
+            style="
+              margin-bottom: 1% !important;
+              text-align: center;
+              color: #000000 !important;
+              font-weight: 800;
+            "
+          >
+           {{ table.title }}
+          </h1>
+        </div>
+      </v-flex>
+       </v-layout>
+      <b-card style="background:#0277BD">
+         <v-layout  row wrap justify-center>
+              
+           <v-flex  xs12 sm6 md8 lg9 xl9>
+               <div data-aos="flip-left">
+                    <h4  class="text-uppercase"></h4>
+                    <p>{{ table.description }}</p>
+                  </div>
+           </v-flex>
+           
+         </v-layout>
+       </b-card
       >
 
       <b-row class="my-3">
-        <b-col>
-          <b-card>
-            <table class="table">
-              <thead class="table_nav">
-                <tr>
-                  <th scope="col">Title</th>
-                  <th scope="col">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(item, index) in table.arr" :key="index">
-                  <th scope="row">{{ item.title }}</th>
-                  <td>
-                    {{ item.description }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </b-card>
+        <b-col>    
+              <v-layout  row wrap justify-center>
+                <b-card  style="background:#FAFAFA; width:100%"  class="mt-1 mx-2" v-for="(item, index) in table.arr" :key="index">
+                    <v-flex   xs12 sm12 md12 lg12 xl12>
+                      <v-layout row wrap justify-center>
+                        <v-flex xs5 sm5 md3 lg3 xl3>
+                          <div data-aos="flip-left"> {{ item.title }}</div>
+                           
+                          </v-flex>
+                          <v-flex xs7 sm7 md9 lg9 xl9>
+                             <div data-aos="flip-right">  {{ item.description }}</div>
+                               
+                          </v-flex>
+                      </v-layout>
+                    </v-flex>
+                </b-card>
+              </v-layout>
+              
+           
+          
         </b-col>
       </b-row>
-    </b-container>
+     
+
+      </div>
+      <svg style="margin-top:-30%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#0099ff" fill-opacity="1" d="M0,32L1440,320L1440,320L0,320Z"></path>
+</svg>
+    <svg style="margin-top: -5%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#0099ff"
+        fill-opacity="1"
+        d="M0,224L48,202.7C96,181,192,139,288,122.7C384,107,480,117,576,117.3C672,117,768,107,864,133.3C960,160,1056,224,1152,234.7C1248,245,1344,203,1392,181.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+      ></path>
+    </svg>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+       img:require("@/assets/img/ST-2.jpg"),
       table: {
         title: "Key Programmatic areas",
         description:
@@ -110,21 +147,18 @@ export default {
 }
 h4 {
   font-size: 0.8em;
-  font-family: Century Gothic;
-  opacity: 0.99;
+  font-family: Century Gothic; 
   margin: 20px 0;
-  font-size: 2em;
-  opacity: 0.8;
-  color: #0004fc;
+  font-size: 2em;  
+  color: #fefeff;
 }
 
 p {
   font-size: 1em !important;
-  font-family: Century Gothic;
-  opacity: 0.99;
+  font-family: Century Gothic; 
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 20px;
-  color: #3e3e4a;
+  color: #f2f2f8;
 }
 </style>

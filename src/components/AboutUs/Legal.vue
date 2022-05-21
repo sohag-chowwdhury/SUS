@@ -1,22 +1,42 @@
 <template>
-  <div style="margin-top: 5%">
-    <b-container>
+  <div style="margin:5% 5% 5% 5%">
+    <v-layout row wrap justify-center>
+         <v-flex class="header_text" xs12 md12 lg12 sm12 text-center>
+        <div data-aos="zoom-in">
+          <h1
+            style="
+              margin-bottom: 1% !important;
+              text-align: center;
+              color: #000000 !important;
+              font-weight: 800;
+            "
+          >
+          {{ table.title }}
+          </h1>
+        </div>
+      </v-flex>
+       </v-layout>
       <b-card>
         <div>
-          <h4 class="text-uppercase">{{ table.title }}</h4>
-          <p>{{table.description}}</p>
-          <p>
+          <v-layout row wrap justify-center>
            
-              <ul>
-                <li v-for="(i, index) in table.arr" :key="index + '6'">
-                  {{ i }}
-                </li>
-              </ul>
-        
-          </p>
+             <v-flex xs12 sm12 md12 lg12 x12>
+              <p class="my-2" style="font-weight:600">{{table.description}}</p>
+            </v-flex>
+            <v-flex xs12 sm12 md12 lg12 x12 v-for="(i, index) in table.arr" :key="index + '6'">
+               <div   data-aos="fade-left">
+               <b-card :style="index % 2 === 0 ?'background:#FAFAFA;' : 'background:#EEEEEE;' " min-width="100">
+                  {{index + 1}}.   {{ i }}
+               </b-card>
+               </div>
+            </v-flex>
+          </v-layout>
+          
+          
+          
         </div></b-card
       >
-    </b-container>
+   
   </div>
 </template>
 
@@ -49,11 +69,10 @@ export default {
 h4 {
   font-size: 0.8em;
   font-family: Century Gothic;
-  opacity: 0.99;
   margin: 20px 0;
-  font-size: 2em;
-  opacity: 0.8;
-  color: #0004fc;
+  font-size: 2em; 
+  color: #fdfdff;
+  margin-left: 2%;
 }
 
 p {
@@ -64,5 +83,6 @@ p {
   letter-spacing: 1px;
   line-height: 20px;
   color: #3e3e4a;
+   margin-left: 2%;
 }
 </style>
