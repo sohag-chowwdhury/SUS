@@ -1,58 +1,33 @@
 <template>
     <div>
-        <div class="header " :style=" {'background-image': 'url(' + require('@/assets/img/headerBg.jpg') + ')'}">
-            <v-layout class="overly" row wrap justify-center>
-                <v-flex xs12 md7 lg7 sm7 >
-                    <h1>Launch your <br> restaurant 3,2,1...</h1>
-                </v-flex>
-                <v-flex xs12 sm5 md5 lg5 text-center class="button" >
-                    <v-btn class="white--text" color="#8E283A">Get Your Free Account</v-btn>
-                </v-flex>
-            </v-layout>
-        </div>
-   <v-divider class="my-3 hideLg"></v-divider>
+        <b-card style="width:100%">
+       <div style="margin:5% 5% 5% 5%">
 
-        <v-container  >
+       
             <v-layout class="mt-7" row wrap justify-start>
                 <v-flex xs12 md4 lg4 sm4>
-                    <v-img class="ml-3" width="200px" :src="img">
+                    <v-img style="margin:auto;" class="ml-3" width="50px" :src="img">
 
                     </v-img>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam quos quibusdam voluptatum ipsa quasi quae, illum tempore consectetur expedita sunt magnam dolor tenetur dicta cum quaerat! Cumque,cupiditate amet </p>
+                    <p>Social Upliftment Society (SUS) is a women-led Non-Political, Not-for-Profit and Non-Governmental Organization (NGO) which formally started its journey in the development sector of Bangladesh in the year of 1990 with an aim of improving the socio-economic condition of the disadvantaged and under privileged people with a clear focus on women empowerment.</p>
                 </v-flex>
                 <v-flex xs6 md4 lg4 sm4 class="mt-8">
-                    <h3>Solutions By Industry</h3>
-                    <h4>Productive Families</h4>
-                    <h4>Bakeries</h4>
-                    <h4>Cafes</h4>
-                    <h4>Restaurants</h4>
+                    <h3>Address</h3>
+                    <h4>Head Office: C-25, Jaleswar, Shimultala, Savar, Dhaka-1340</h4>
+                    <h4>Phone: 88-02-77446229, 88-02-7742403</h4>
+                    <h4>Email:sushelp360@gmail.com; www.sus-bd.org</h4>
+                    
                 </v-flex>
                 <v-flex xs6 md4 lg4 sm4 class="mt-8">
-                    <h3>Resappy Partners Program</h3>
-                    <h4>Referral Partner Program</h4>
-                    <h4>Delivery Provider Registration</h4>
-                    <h4>Food & Beverage Suppliers Registration</h4>
+                    <h3>SUS working areas </h3>
+                    <h4>SUS is implementing its program and projects in six Districts and eleven Upazilas: Dhaka (Savar, Dhamrai, Keraniganj), Gazipur (Sadar, Kaliakoir), Manikganj (Singair), Narsingdi (Sadar, Shibpur), Mymensingh (Sadar) and Lakshmipur (Sadar, Kamolnagar).</h4>
+                    
                     
                 </v-flex>
             </v-layout>
-        </v-container>
-        <div style="background:#34374C; height:30px; ">
-            <v-container>
-            <v-layout row wrap justify-start>
-                
-                    <v-flex xs4 sm4 md8 lg8 text-start>
-                        <h4 class="mt-1" style="color:white; font-size:0.9em; font-family: Century Gothic;">{{new Date().getFullYear()}} Resappy</h4>
-                </v-flex>
-                <v-flex xs4 sm4 md2 lg2>
-                    <h4 class="mt-1" style="color:white; font-size:0.9em; font-family: Century Gothic;">Terms & condation</h4>
-                </v-flex>
-                <v-flex xs4 sm4 md2 lg2>
-                    <h4 class="mt-1" style="color:white; font-size:0.9em; font-family: Century Gothic;">Privacy Policy</h4>
-                </v-flex>
-               
-            </v-layout>
-             </v-container>
-        </div>
+       
+      </div> 
+      </b-card> 
     </div>
 </template>
 <script>
@@ -216,8 +191,7 @@ export default {
     letter-spacing: 0;
     color: #1b1010;
     text-align: start;
-    margin-left: 10%;
-    margin-right: 10%;
+   
   }
   .button{
       margin: auto ;
