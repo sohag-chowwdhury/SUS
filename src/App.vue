@@ -26,7 +26,10 @@
 
       <span v-for="(item, index) in nabItem" :key="item.index">
         <v-toolbar-title
+<<<<<<< HEAD
           @click="buttonClick(index, item.to)"
+=======
+>>>>>>> master
           v-if="index < 4"
           class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
         >
