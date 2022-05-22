@@ -12,6 +12,12 @@ import Network from "../views/Network.vue";
 import Achievement from "../views/Achievement.vue";
 import Contact from "../views/Contact.vue";
 import Gallery from "../views/Gallery.vue";
+import News from "../views/News.vue";
+import Career from "../views/Career.vue";
+import Budget from "../views/Budget.vue";
+
+
+
 
 
 Vue.use(VueRouter);
@@ -76,6 +82,21 @@ const routes = [
     path: "/photo",
     name: "Gallery",
     component: Gallery,
+  },
+  {
+    path: "/news",
+    name: "News",
+    component: News,
+  },
+  {
+    path: "/career",
+    name: "Career",
+    component: Career,
+  },
+  {
+    path: "/budget",
+    name: "Budget",
+    component: Budget,
   },
 ];
 

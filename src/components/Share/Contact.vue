@@ -11,7 +11,7 @@
         <v-flex   xs12 md12 lg12 text-center>
           
                         <div data-aos="fade-right">
-                        <h1 style="text-align: center !important; font-weight:800;">Cntuct Us</h1>
+                        <h1 style="text-align: center !important; font-weight:800;">Contact Us</h1>
                         </div>
                   
           

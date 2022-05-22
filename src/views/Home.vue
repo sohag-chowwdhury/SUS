@@ -303,7 +303,7 @@
               font-weight: 800;
             "
           >
-            Gellary
+            Gallery
           </h1>
         </div>
       </v-flex>

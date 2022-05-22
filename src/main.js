@@ -26,7 +26,11 @@ import Contact from './components/Share/Contact.vue'
 import ContactV from './components/Contact/ContactV.vue'
 
 import Gallery from './components/Gallery/Gallery.vue'
+import News from './components/News/News.vue'
 
+
+import NavBarOr from './components/Share/NavBarOr.vue'
+import Navbar from './components/Share/Navbar.vue'
 
 
 
@@ -52,6 +56,13 @@ Vue.component('training-rehabilitation-center', TrainingRehabilitationCenter)
 Vue.component('contact', Contact)
 Vue.component('inner-contatc', ContactV)
 Vue.component('gallery', Gallery)
+
+Vue.component('news', News)
+
+Vue.component('navbar', Navbar)
+Vue.component('navbar-or', NavBarOr)
+
+
 
 
 
