@@ -1,12 +1,19 @@
  <template>
-    <div>
- <v-app-bar
+  <div>
+    <v-app-bar
       height="45px"
+      :class="scrollPosition > 702
+          ? 'background2'
+          : '' || (scrollPosition < 701 && scrollPosition > 95)
+          ? 'background2'
+          : '' || scrollPosition < 94
+          ? ''
+          : ''"
       :color="
         scrollPosition > 702
-          ? 'light-blue darken-4'
+          ? ''
           : '' || (scrollPosition < 701 && scrollPosition > 95)
-          ? 'light-blue darken-3'
+          ? ''
           : '' || scrollPosition < 94
           ? 'transparent'
           : ''
@@ -22,14 +29,11 @@
       <v-app-bar-nav-icon class="d-none d-sm-flex mx-lg-7 mx-md-2 mx-sm-1"
         ><v-img :src="img" max-width="38px"></v-img
       ></v-app-bar-nav-icon>
-      
 
       <span v-for="(item, index) in nabItem" :key="item.index">
         <v-toolbar-title
-        
-          @click="buttonClick( item.to)"
           v-if="index < 4"
-          class="white--text hidden mx-lg-6 mx-md-4 mx-sm-1"
+          class="white--text hidden mx-lg-3 mx-md-1 mx-sm-1"
         >
           <span
             style="cursor: pointer"
@@ -47,6 +51,7 @@
             <v-menu open-on-hover bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
+                  @click="buttonClick(item.to)"
                   style="background-color: transparent"
                   dark
                   v-bind="attrs"
@@ -66,21 +71,22 @@
                 min-width="10%"
               >
                 <v-list-item v-for="(i, index) in item.subManu" :key="index">
-                  <v-list-item-title style="color: #ffffff">{{
-                    i.name
-                  }}</v-list-item-title>
+                  <v-list-item-title
+                    @click="buttonClick(i.to)"
+                    style="color: #ffffff; cursor: pointer"
+                    >{{ i.name }}</v-list-item-title
+                  >
                 </v-list-item>
               </v-list>
             </v-menu>
           </span></v-toolbar-title
         >
       </span>
-      
+
       <span v-for="(item, index) in nabItem" :key="item.index">
         <v-toolbar-title
-          @click="buttonClick( item.to)"
           v-if="index > 3"
-          class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
+          class="white--text hidden mx-lg-3 mx-md-1 mx-sm-1"
         >
           <span
             style="cursor: pointer"
@@ -98,6 +104,7 @@
             <v-menu open-on-hover bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
+                  @click="buttonClick(item.to)"
                   style="background-color: transparent"
                   dark
                   v-bind="attrs"
@@ -117,9 +124,11 @@
                 min-width="10%"
               >
                 <v-list-item v-for="(i, index) in item.subManu" :key="index">
-                  <v-list-item-title style="color: #ffffff">{{
-                    i.name
-                  }}</v-list-item-title>
+                  <v-list-item-title
+                    @click="buttonClick(i.to)"
+                    style="color: #ffffff"
+                    >{{ i.name }}</v-list-item-title
+                  >
                 </v-list-item>
               </v-list>
             </v-menu>
@@ -133,8 +142,8 @@
         <v-divider></v-divider>
         <span v-for="(item, index) in nabItem" :key="item.index">
           <v-list-item
-            @click="buttonClick(index)"
-            v-if="index < 3"
+            @click="buttonClick(item.to)"
+            v-if="index < 4"
             class="mx-4"
           >
             <span :class="index + 1 == indexValue ? 'seleted' : ''"
@@ -145,7 +154,7 @@
 
         <span v-for="(item, index) in nabItem" :key="item.index">
           <v-list-item
-            @click="buttonClick(index)"
+            @click="buttonClick(item.to)"
             v-if="index > 4"
             class="mx-4"
           >
@@ -157,9 +166,8 @@
       </v-list>
       <v-divider></v-divider>
     </v-navigation-drawer>
-
-    </div>   
-    </template>
+  </div>
+</template>
      <script>
 export default {
   data() {
@@ -179,11 +187,12 @@ export default {
             { name: "Vision, Mission, Goal", to: "/vision" },
             { name: "Governance Structure", to: "/governance" },
             { name: "Management Structure", to: "/management" },
-            { name: "Key Programmatic areas", to: "/areas" },
-            { name: "SUS Stakeholders / Clients", to: "/clients" },
+            { name: "Key Programmatic areas", to: "/keyprogram" },
+            { name: "SUS Stakeholders / Clients", to: "/susClients" },
+             { name: "Achievement and Milestone of SUS", to: "/achievement" },
             { name: "Geographical Coverage", to: "/coverage" },
-            { name: "Linkage and Network", to: "/linkage" },
-            { name: "Achievement and Milestone of SUS", to: "/achievement" },
+            { name: "Linkage and Network", to: "/network" },
+           
           ],
         },
 
@@ -193,21 +202,23 @@ export default {
           to: "/infrastructure",
           subManu: [
             { name: "SUS Training Center", to: "/center" },
-            { name: "Animal Health Care Centers", to: "/health_care" },
-            { name: "Milk Chilling Plant", to: "/chilling_plant" },
+            { name: "Animal Health Care Centers", to: "/health" },
+           
             {
               name: " Training and Rehabilitation Center",
               to: "/rehabilitation",
             },
             {
               name: "Solid Paper Board Packaging Center",
-              to: "/packaging_center",
+              to: "/packaging",
             },
-            { name: "Nursery Development Centre ", to: "/nursery_center" },
+            { name: "Nursery Development Centre ", to: "/nursery" },
           ],
         },
-       
-        { name: "Projects", submanu: false, to: "/project" },
+
+        { name: "Projects", submanu: true, to: "/proj" , subManu: [
+            { name: "Projects", to: "/project" },
+            { name: "Programs", to: "/program" }] },
         { name: "Budget", submanu: false, to: "/budget" },
         { name: "Career", submanu: false, to: "/career" },
         { name: "Photo Gallery", submanu: false, to: "/photo" },
@@ -226,7 +237,8 @@ export default {
       this.scrollPosition = window.scrollY;
     },
     buttonClick(e) {
-       this.$router.push(e)
+      console.log(e);
+      this.$router.push(e);
     },
     onRoute(e) {
       console.log(e);
@@ -251,6 +263,99 @@ export default {
 </script>
 <style>
 @media only screen and (min-width: 601px) {
+  .background2 {
+    color: #fff;
+    background: linear-gradient(
+      -45deg,
+      #0099FF,
+      #0689e0,
+      #066bad,
+      #024470,
+      #0099FF,
+      #25a6fc,
+      #014470,
+      #0364a5,
+      #014674
+    );
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 7s ease infinite;
+    -moz-animation: Gradient 7s ease infinite;
+    animation: Gradient 7s ease infinite;
+  }
+.background1 {
+    color: #fff;
+    background: linear-gradient(
+      -45deg,
+      #024470,
+      #0099FF,
+      #25a6fc,
+      #0099FF,
+      #0099FF,
+      #014674,
+      #0099FF,
+      #0689e0,
+      #066bad
+      
+    );
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 12s ease infinite;
+    -moz-animation: Gradient 12s ease infinite;
+    animation: Gradient 12s ease infinite;
+  }
+.background {
+    color: #fff;
+    background: linear-gradient(
+      -45deg,
+       #25a6fc,
+      #0099FF,
+      #0099FF,
+      #014674,
+      #0099FF,
+      #024470,
+      #0099FF,
+      #0689e0,
+      #066bad
+    );
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 12s ease infinite;
+    -moz-animation: Gradient 12s ease infinite;
+    animation: Gradient 12s ease infinite;
+  }
+    @-webkit-keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @-moz-keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   .seleted {
     color: #ef3c55 !important;
     font-weight: bold;

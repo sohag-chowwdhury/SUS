@@ -1,5 +1,5 @@
 <template>
-    <div style="margin:5% 5% 5% 10%">
+    <div style="margin:10% 5% 5% 10%">
         <v-layout row wrap justify-center>
             <v-flex xs12 md12 lg12 sm12 text-center>
                 <v-card style="width:100%; padding: 3%; ">

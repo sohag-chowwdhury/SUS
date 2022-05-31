@@ -17,7 +17,7 @@
         </div>
       </v-flex>
        </v-layout>
-      <b-card style="background:#0277BD">
+      <b-card  style="background:#0277BD; margin-top:3%">
          <v-layout  row wrap justify-center>
               
            <v-flex  xs12 sm6 md8 lg9 xl9>
@@ -38,11 +38,11 @@
                     <v-flex   xs12 sm12 md12 lg12 xl12>
                       <v-layout row wrap justify-center>
                         <v-flex xs5 sm5 md3 lg3 xl3>
-                          <div data-aos="flip-left"> {{ item.title }}</div>
+                          <div data-aos="flip-left"> <p style="color:#000000 !important;">{{ item.title }}</p></div>
                            
                           </v-flex>
                           <v-flex xs7 sm7 md9 lg9 xl9>
-                             <div data-aos="flip-right">  {{ item.description }}</div>
+                             <div data-aos="flip-right"> <p style="color:#000000 !important;"> {{ item.description }}</p></div>
                                
                           </v-flex>
                       </v-layout>
@@ -57,10 +57,10 @@
      
 
       </div>
-      <svg style="margin-top:-30%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg v-if="!isHome" style="margin-top:-30%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
   <path fill="#0099ff" fill-opacity="1" d="M0,32L1440,320L1440,320L0,320Z"></path>
 </svg>
-    <svg style="margin-top: -5%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg v-if="!isHome" style="margin-top: -5%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
         fill="#0099ff"
         fill-opacity="1"
@@ -136,11 +136,29 @@ export default {
         ],
       },
     };
+    
+  },
+   computed: {
+    isHome() {
+      return this.$route.path == "/keyprogram";
+    },
   },
 };
 </script>
 
 <style scoped>
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+  h1 {
+   font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
 .table_nav {
   background: #0d47a1 !important;
   color: white;
@@ -154,11 +172,11 @@ h4 {
 }
 
 p {
-  font-size: 1em !important;
+  font-size: 1.05em !important;
   font-family: Century Gothic; 
   font-weight: 500;
   letter-spacing: 1px;
-  line-height: 20px;
+  line-height: 1.5em !important;
   color: #f2f2f8;
 }
 </style>

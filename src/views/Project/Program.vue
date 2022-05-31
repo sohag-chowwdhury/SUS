@@ -1,0 +1,3 @@
+<template>
+  <program></program>
+</template>

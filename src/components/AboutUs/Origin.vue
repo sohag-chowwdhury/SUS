@@ -18,7 +18,7 @@
         justify-center
       >
         <v-flex xs11 sm11 md11 lg11 text-center>
-          <div  class="origin" data-aos="fade-up">
+          <div c style="margin:5% 0% 0% 0%"  class="origin" data-aos="fade-up">
             <h2>
               Origin of the organization
             </h2>
@@ -246,8 +246,86 @@ export default {
 </script>
 
 <style scoped>
- .header {
-    height: 500px;
+
+@media only screen and (max-width: 600px) {
+    h1 {
+     font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
+  .header {
+    height: 750px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .hideLg {
+    display: none !important;
+  }
+ 
+.overly {
+    background: rgba(29, 35, 88, 0.8);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+.table_nav {
+  background: #0d47a1 !important;
+  color: white;
+}
+.origin h2 {
+  font-size: 1.4em !important;
+  font-family: Century Gothic; 
+  margin: 15% 5% 5% 5% ;
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+}
+.origin p {
+  font-size: .75em !important;
+  font-family: Century Gothic; 
+  margin: 1% 2% 2%  2%;
+  text-align: start;
+ 
+   color: #ffffff;
+  
+}
+h4 {
+  font-size: 0.8em;
+  font-family: Century Gothic;
+  
+  margin: 20px 0;
+  font-size: 1.2em !important;
+  color: #ffffff;
+  text-align: center;
+}
+
+p {
+  font-size: 1.05em !important;
+  font-family: Century Gothic;
+  opacity: 0.99;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 20px;
+  color: #0f0f0f;
+   text-align: center;
+}
+}
+@media only screen and (min-width: 601px) {
+  .header {
+    height: 600px;
     width: 100%;
     position: relative;
     background-size: cover;
@@ -301,13 +379,15 @@ h4 {
 }
 
 p {
-  font-size: 1em !important;
+  font-size: 1.05em !important;
   font-family: Century Gothic;
   opacity: 0.99;
   font-weight: 500;
   letter-spacing: 1px;
-  line-height: 20px;
+  line-height: 1.5em;
   color: #0f0f0f;
    text-align: justify;
 }
+}
+ 
 </style>

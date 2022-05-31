@@ -17,7 +17,7 @@
         </div>
       </v-flex>
       <v-flex xs12 sm12 md12 lg12 xl12>
-         <b-card style="background:#2979FF">
+         <b-card class="background" style="">
              <div data-aos="flip-left">
                <p>{{table.description}}</p>
              </div>
@@ -28,19 +28,19 @@
       <v-flex xs12 sm12 md12 lg12 xl12>
           <v-layout class="mx-1 my-2" row wrap justify-center>
             <v-flex xs12 sm12 md4 lg4 xl4 v-for="(i, index) in table.arr" :key="index + '6'">
-                <b-card v-if="index == 0"  style="height:250px; background:#448AFF;">
+                <b-card v-if="index == 0" class="background2"  style="height:250px; ">
                    <div data-aos="flip-right">
                      <h3>{{i.name}}</h3>
                       <p>{{i.description}}</p>
                    </div>
                 </b-card>
-                <b-card v-if="index == 1"  style="height:250px;background:#2979FF;">
+                <b-card v-if="index == 1" class="background1"  style="height:250px;">
                   <div data-aos="zoom-in">
                      <h3>{{i.name}}</h3>
                 <p>{{i.description}}</p>
                   </div>
                 </b-card>
-                <b-card v-if="index == 2"  style="height:250px; background:#2962FF;">
+                <b-card v-if="index == 2" class="background"  style="height:250px;">
                     <div data-aos="flip-left">
                       <h3>{{i.name}}</h3>
                      <p>{{i.description}}</p>
@@ -73,10 +73,113 @@ export default {
 
 
 <style scoped>
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+.background2 {
+    color: #fff;
+    background: linear-gradient(
+      -45deg,
+      #0099FF,
+      #0689e0,
+      #066bad,
+      #024470,
+      #0099FF,
+      #25a6fc,
+      #0099FF,
+      #0099FF,
+      #014674
+    );
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 30s ease infinite;
+    -moz-animation: Gradient 30s ease infinite;
+    animation: Gradient 30s ease infinite;
+  }
+.background1 {
+    color: #fff;
+    background: linear-gradient(
+      -45deg,
+      #024470,
+      #0099FF,
+      #25a6fc,
+      #0099FF,
+      #0099FF,
+      #014674,
+      #0099FF,
+      #0689e0,
+      #066bad
+      
+    );
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 30s ease infinite;
+    -moz-animation: Gradient 30s ease infinite;
+    animation: Gradient 30s ease infinite;
+  }
+.background {
+    color: #fff;
+    background: linear-gradient(
+      -45deg,
+       #25a6fc,
+      #0099FF,
+      #0099FF,
+      #014674,
+      #0099FF,
+      #024470,
+      #0099FF,
+      #0689e0,
+      #066bad
+    );
+    background-size: 400% 400%;
+     -webkit-animation: Gradient 30s ease infinite;
+    -moz-animation: Gradient 30s ease infinite;
+    animation: Gradient 30s ease infinite;
+  }
+    @-webkit-keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
+  @-moz-keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
 h3 {
-  font-size: 0.8em;
+  
   font-family: Century Gothic;
   opacity: 0.99;
   margin: 20px 0;
@@ -97,8 +200,8 @@ p {
   font-family: Century Gothic;
   opacity: 0.99;
   letter-spacing: 1px;
-  font-size: .9em;
-  line-height: 20px;
+  font-size: 1.05em !important;
+  line-height: 1.5em;
   color: hsl(0, 100%, 100%);
 }
 

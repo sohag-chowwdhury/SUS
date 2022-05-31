@@ -15,12 +15,12 @@ import Origin from './components/AboutUs/Origin.vue'
 import SusClients from './components/AboutUs/SusClients.vue'
 import VisionMissionGoal from './components/AboutUs/VisionMissionGoal.vue'
 
-import AnimalHealthCare from './components/Infrastructure/AnimalHealthCare.vue'
-import MilkChillingPlant from './components/Infrastructure/MilkChillingPlant.vue'
-import NurseryDevelopmentCentre from './components/Infrastructure/NurseryDevelopmentCentre.vue'
-import SolidPaperBoard from './components/Infrastructure/SolidPaperBoard.vue'
-import TrainingCenter from './components/Infrastructure/TrainingCenter.vue'
-import TrainingRehabilitationCenter from './components/Infrastructure/TrainingRehabilitationCenter.vue'
+import AnimalHealthCare from "./components/Infrastructure/AnimalHealthCare.vue";
+import MilkChillingPlant from "./components/Infrastructure/MilkChillingPlant.vue";
+import NurseryDevelopmentCentre from "./components/Infrastructure/NurseryDevelopmentCentre.vue";
+import SolidPaperBoard from "./components/Infrastructure/SolidPaperBoard.vue";
+import TrainingCenter from "./components/Infrastructure/TrainingCenter.vue";
+import TrainingRehabilitationCenter from "./components/Infrastructure/TrainingRehabilitationCenter.vue";
 
 import Contact from './components/Share/Contact.vue'
 import ContactV from './components/Contact/ContactV.vue'
@@ -28,6 +28,12 @@ import ContactV from './components/Contact/ContactV.vue'
 import Gallery from './components/Gallery/Gallery.vue'
 import News from './components/News/News.vue'
 
+import L from 'leaflet';
+
+
+import Projects from "./components/Projects/Projects.vue";
+
+import Program from "./components/Projects/Program.vue";
 
 import NavBarOr from './components/Share/NavBarOr.vue'
 import Navbar from './components/Share/Navbar.vue'
@@ -35,7 +41,6 @@ import Navbar from './components/Share/Navbar.vue'
 
 
 import BootstrapVue from 'bootstrap-vue'
-import * as VueGoogleMaps from "vue2-google-maps"
 Vue.component('achievement', Achievement)
 Vue.component('geographical', Geographical)
 Vue.component('governance', Governance)
@@ -47,12 +52,16 @@ Vue.component('origin', Origin)
 Vue.component('sus-clients', SusClients)
 Vue.component('vision-mission-goal', VisionMissionGoal)
 
-Vue.component('animal-health-care', AnimalHealthCare)
-Vue.component('milk-chilling-plant', MilkChillingPlant)
-Vue.component('nursery-development-centre', NurseryDevelopmentCentre)
-Vue.component('solid-paper-board', SolidPaperBoard)
-Vue.component('training-center', TrainingCenter)
-Vue.component('training-rehabilitation-center', TrainingRehabilitationCenter)
+Vue.component("animal-health-care", AnimalHealthCare);
+Vue.component("milk-chilling-plant", MilkChillingPlant);
+Vue.component("nursery-development-centre", NurseryDevelopmentCentre);
+Vue.component("solid-paper-board", SolidPaperBoard);
+Vue.component("training-center", TrainingCenter);
+Vue.component("training-rehabilitation-center", TrainingRehabilitationCenter);
+
+Vue.component("project", Projects);
+Vue.component("program", Program);
+
 Vue.component('contact', Contact)
 Vue.component('inner-contatc', ContactV)
 Vue.component('gallery', Gallery)
@@ -66,13 +75,14 @@ Vue.component('navbar-or', NavBarOr)
 
 
 
+delete L.Icon.Default.prototype._getIconUrl;
 
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: "AIzaSyDQaMSz3EAEWnTN3M0h8jv3oHVDldO9TS0",
-    libraries: "places"
-  }
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
+
 Vue.component('Footer', footer)
 
 import 'bootstrap/dist/css/bootstrap.css'

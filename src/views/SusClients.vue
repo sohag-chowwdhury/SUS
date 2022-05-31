@@ -1,5 +1,5 @@
 <template>
   <div class="mt-3">
-    <susClients></susClients>
+    <sus-clients></sus-clients>
   </div>
 </template>

@@ -7,7 +7,7 @@
         <div data-aos="fade-right">
           <h1
             style="
-              margin-bottom: 1% !important;
+             
               text-align: center;
               color: black;
               font-weight: 800;
@@ -63,7 +63,10 @@
             </v-flex>
           </v-layout>
           <v-layout>
-            <v-btn style="margin-left: 70%" text
+            <v-btn to="/1" style="margin-left: 70%" text v-if="i == 0"
+              >Read More <v-icon>mdi-arrow-right</v-icon></v-btn
+            >
+             <v-btn to="/2" style="margin-left: 70%" text v-if="i == 1"
               >Read More <v-icon>mdi-arrow-right</v-icon></v-btn
             >
           </v-layout>
@@ -228,6 +231,17 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin: 10% 5% 5% 5%;
+    font-weight: 800;
+    text-align: center;
+  }
 h3 {
   font-family: Century Gothic;
   margin: 3% 3% 3% 3%;
@@ -264,4 +278,54 @@ p {
   padding: 3%;
   overflow: hidden;
 }
+}
+@media only screen and (min-width: 601px) {
+  h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin: 0% 5% 5% 5%;
+    font-weight: 800;
+    text-align: center;
+  }
+h3 {
+  font-family: Century Gothic;
+  margin: 3% 3% 3% 3%;
+  font-size: 1.3em;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: #070707;
+  padding: 3%;
+}
+.image {
+  float: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 3px solid #686869;
+  margin-top: 1px !important;
+}
+h4 {
+  font-family: Century Gothic;
+  margin: 0% 3% 3% 3%;
+  font-size: 1.1em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #070707;
+  padding: 3%;
+}
+p {
+  font-family: Century Gothic;
+  margin: 0% 3% 0% 3%;
+  font-size: 1.1em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #070707;
+  padding: 3%;
+  overflow: hidden;
+}
+}
+
 </style>

@@ -5,7 +5,7 @@
         <div data-aos="zoom-in">
           <h1
             style="
-              margin-bottom: 1% !important;
+              margin-bottom: 5% !important;
               text-align: center;
               color: #000000 !important;
               font-weight: 800;
@@ -26,7 +26,7 @@
             <v-flex xs12 sm12 md12 lg12 x12 v-for="(i, index) in table.arr" :key="index + '6'">
                <div   data-aos="fade-left">
                <b-card :style="index % 2 === 0 ?'background:#FAFAFA;' : 'background:#EEEEEE;' " min-width="100">
-                  {{index + 1}}.   {{ i }}
+                 <p> {{index + 1}}.   {{ i }}</p>
                </b-card>
                </div>
             </v-flex>
@@ -64,8 +64,18 @@ export default {
 
 
 <style scoped>
-
-
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+  h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
 h4 {
   font-size: 0.8em;
   font-family: Century Gothic;
@@ -76,13 +86,13 @@ h4 {
 }
 
 p {
-  font-size: 1em !important;
+  font-size: 1.05em !important;
   font-family: Century Gothic;
-  opacity: 0.99;
+  opacity: 1 !important;
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 20px;
-  color: #3e3e4a;
+  color: #030303;
    margin-left: 2%;
 }
 </style>

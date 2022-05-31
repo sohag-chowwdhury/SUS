@@ -6,7 +6,7 @@
        
             <v-layout class="mt-7" row wrap justify-start>
                 <v-flex xs12 md4 lg4 sm4>
-                    <v-img style="margin:auto;" class="ml-3" width="50px" :src="img">
+                    <v-img style="margin-left:10% !important;" class="ml-3" width="50px" :src="img">
 
                     </v-img>
                     <p>Social Upliftment Society (SUS) is a women-led Non-Political, Not-for-Profit and Non-Governmental Organization (NGO) which formally started its journey in the development sector of Bangladesh in the year of 1990 with an aim of improving the socio-economic condition of the disadvantaged and under privileged people with a clear focus on women empowerment.</p>

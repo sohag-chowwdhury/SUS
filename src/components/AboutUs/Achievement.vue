@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="margin: 5% 5% 5% 5%">
+    <div class="main-div" >
 
    
       <v-layout>
@@ -47,10 +47,10 @@
         </b-col>
       </b-row>
        </div>
-      <svg style="margin-top:-25%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg v-if="!isHome" style="margin-top:-25%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
   <path fill="#0099ff" fill-opacity="1" d="M0,288L80,240C160,192,320,96,480,85.3C640,75,800,149,960,197.3C1120,245,1280,267,1360,277.3L1440,288L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
 </svg>
-    <svg style="margin-top: -5%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg v-if="!isHome" style="margin-top: -5%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
         fill="#0099ff"
         fill-opacity="1"
@@ -178,15 +178,33 @@ export default {
       ],
     };
   },
+   computed: {
+    isHome() {
+      return this.$route.path == "/achievement";
+    },
+  },
 };
 </script>
 
 <style scoped>
-.table_nav {
+@media only screen and (max-width: 600px) {
+  .main-div {
+    margin: 15% 5% 5% 5%;
+  }
+  .table_nav {
   background: #0d47a1 !important;
   color: white;
 }
-
+  h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
 h4 {
   font-size: 0.8em;
   font-family: Century Gothic;
@@ -206,4 +224,51 @@ p {
   line-height: 20px;
   color: #3e3e4a;
 }
+}
+@media only screen and (min-width: 601px) {
+   .main-div {
+    margin: -15% 5% 5% 5%;
+  }
+  .table_nav {
+  background: #0d47a1 !important;
+  color: white;
+}
+  h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
+h4 {
+  font-size: 0.8em;
+  font-family: Century Gothic;
+  opacity: 0.99;
+  margin: 20px 0;
+  font-size: 2em;
+  opacity: 0.8;
+  color: #0004fc;
+}
+
+p {
+  font-size: 1em !important;
+  font-family: Century Gothic;
+  opacity: 0.99;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 20px;
+  color: #3e3e4a;
+}
+th {
+  font-size: 1.05em !important;
+}
+td {
+    font-size: 1.05em !important;
+
+}
+}
+
 </style>

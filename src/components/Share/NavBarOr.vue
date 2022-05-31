@@ -1,10 +1,10 @@
-<template>
-    <div>
-<v-app-bar
-      height="65px"
+ <template>
+  <div>
+    <v-app-bar
+      height="60px"
       :color="
         scrollPosition > 702
-          ? 'light-blue darken-4'
+          ? 'light-blue darken-2'
           : '' || (scrollPosition < 701 && scrollPosition > 95)
           ? 'light-blue darken-3'
           : '' || scrollPosition < 94
@@ -22,13 +22,11 @@
       <v-app-bar-nav-icon class="d-none d-sm-flex mx-lg-7 mx-md-2 mx-sm-1"
         ><v-img :src="img" max-width="38px"></v-img
       ></v-app-bar-nav-icon>
-      
 
       <span v-for="(item, index) in nabItem" :key="item.index">
         <v-toolbar-title
-          @click="buttonClick( item.to)"
           v-if="index < 4"
-          class="white--text hidden mx-lg-6 mx-md-1 mx-sm-1"
+          class="white--text hidden mx-lg-3 mx-md-1 mx-sm-1"
         >
           <span
             style="cursor: pointer"
@@ -46,6 +44,7 @@
             <v-menu open-on-hover bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
+                  @click="buttonClick(item.to)"
                   style="background-color: transparent"
                   dark
                   v-bind="attrs"
@@ -65,23 +64,22 @@
                 min-width="10%"
               >
                 <v-list-item v-for="(i, index) in item.subManu" :key="index">
-                  <v-list-item-title style="color: #ffffff">{{
-                    i.name
-                  }}</v-list-item-title>
+                  <v-list-item-title
+                    @click="buttonClick(i.to)"
+                    style="color: #ffffff; cursor: pointer"
+                    >{{ i.name }}</v-list-item-title
+                  >
                 </v-list-item>
               </v-list>
             </v-menu>
-          </span>
-           <v-spacer></v-spacer>
-          </v-toolbar-title
+          </span></v-toolbar-title
         >
       </span>
-      
+
       <span v-for="(item, index) in nabItem" :key="item.index">
         <v-toolbar-title
-          @click="buttonClick( item.to)"
-          v-if="index > 3"
-          class="white--text hidden mx-lg-1 mx-md-1 mx-sm-1"
+          v-if="index > 4"
+          class="white--text hidden mx-lg-3 mx-md-1 mx-sm-1"
         >
           <span
             style="cursor: pointer"
@@ -99,6 +97,7 @@
             <v-menu open-on-hover bottom offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
+                  @click="buttonClick(item.to)"
                   style="background-color: transparent"
                   dark
                   v-bind="attrs"
@@ -118,9 +117,11 @@
                 min-width="10%"
               >
                 <v-list-item v-for="(i, index) in item.subManu" :key="index">
-                  <v-list-item-title style="color: #ffffff">{{
-                    i.name
-                  }}</v-list-item-title>
+                  <v-list-item-title
+                    @click="buttonClick(i.to)"
+                    style="color: #ffffff"
+                    >{{ i.name }}</v-list-item-title
+                  >
                 </v-list-item>
               </v-list>
             </v-menu>
@@ -134,7 +135,7 @@
         <v-divider></v-divider>
         <span v-for="(item, index) in nabItem" :key="item.index">
           <v-list-item
-            @click="buttonClick(index)"
+            @click="buttonClick(item.to)"
             v-if="index < 3"
             class="mx-4"
           >
@@ -146,7 +147,7 @@
 
         <span v-for="(item, index) in nabItem" :key="item.index">
           <v-list-item
-            @click="buttonClick(index)"
+            @click="buttonClick(item.to)"
             v-if="index > 4"
             class="mx-4"
           >
@@ -158,9 +159,8 @@
       </v-list>
       <v-divider></v-divider>
     </v-navigation-drawer>
-
-    </div>   
-    </template>
+  </div>
+</template>
      <script>
 export default {
   data() {
@@ -180,11 +180,12 @@ export default {
             { name: "Vision, Mission, Goal", to: "/vision" },
             { name: "Governance Structure", to: "/governance" },
             { name: "Management Structure", to: "/management" },
-            { name: "Key Programmatic areas", to: "/areas" },
-            { name: "SUS Stakeholders / Clients", to: "/clients" },
+            { name: "Key Programmatic areas", to: "/keyprogram" },
+            { name: "SUS Stakeholders / Clients", to: "/susClients" },
+             { name: "Achievement and Milestone of SUS", to: "/achievement" },
             { name: "Geographical Coverage", to: "/coverage" },
-            { name: "Linkage and Network", to: "/linkage" },
-            { name: "Achievement and Milestone of SUS", to: "/achievement" },
+            { name: "Linkage and Network", to: "/network" },
+           
           ],
         },
 
@@ -194,21 +195,23 @@ export default {
           to: "/infrastructure",
           subManu: [
             { name: "SUS Training Center", to: "/center" },
-            { name: "Animal Health Care Centers", to: "/health_care" },
-            { name: "Milk Chilling Plant", to: "/chilling_plant" },
+            { name: "Animal Health Care Centers", to: "/health" },
+           
             {
               name: " Training and Rehabilitation Center",
               to: "/rehabilitation",
             },
             {
               name: "Solid Paper Board Packaging Center",
-              to: "/packaging_center",
+              to: "/packaging",
             },
-            { name: "Nursery Development Centre ", to: "/nursery_center" },
+            { name: "Nursery Development Centre ", to: "/nursery" },
           ],
         },
-        
-        { name: "Projects", submanu: false, to: "/project" },
+
+        { name: "Projects", submanu: true, to: "/proj" , subManu: [
+            { name: "Projects", to: "/project" },
+            { name: "Programs", to: "/program" }] },
         { name: "Budget", submanu: false, to: "/budget" },
         { name: "Career", submanu: false, to: "/career" },
         { name: "Photo Gallery", submanu: false, to: "/photo" },
@@ -227,7 +230,8 @@ export default {
       this.scrollPosition = window.scrollY;
     },
     buttonClick(e) {
-       this.$router.push(e)
+      console.log(e);
+      this.$router.push(e);
     },
     onRoute(e) {
       console.log(e);

@@ -62,7 +62,10 @@
             <v-layout row wrap v-if="slide == index">
               <v-flex class="hide" xs12 sm6 md6 lg6 text-start>
                 <div data-aos="flip-left">
-                  <v-img class="left-dely slider slider-img" :src="item.img">
+                  <v-img
+                    class="left-dely slider slider-img rounded-xl"
+                    :src="item.img"
+                  >
                   </v-img>
                 </div>
               </v-flex>
@@ -75,7 +78,11 @@
                   <p class="slider-p" style="height: 140px; color: #000000">
                     {{ item.description }}
                   </p>
-                  <v-btn text style="" class="btn-design1 button1 mt-3"
+                  <v-btn
+                    to="/vision"
+                    text
+                    style=""
+                    class="btn-design1 button1 mt-3"
                     >Read More <v-icon>mdi-arrow-right</v-icon></v-btn
                   >
                 </div>
@@ -100,11 +107,12 @@
               </v-flex>
 
               <v-flex class="hideLg" xs12 sm6 md6 lg6 text-start>
-                <v-img class="left-dely slider-img" :src="item.img"> </v-img>
+                <v-img class="left-dely slider-img rounded-lg" :src="item.img">
+                </v-img>
               </v-flex>
 
               <v-flex class="hideLg mt-3" xs12 text-end>
-                <v-layout row wrap justify-center>
+                <v-layout class="slider-item" row wrap justify-center>
                   <v-flex xs3 text-start>
                     <i
                       style="font-size: 2.7em; color: #000000"
@@ -152,7 +160,13 @@
       ></path>
     </svg>
     <!-- second -->
-    <v-layout style="margin-top: -30%" row wrap justify-center class="header2">
+    <v-layout
+      style="margin: -30% 5% 0% 5%"
+      row
+      wrap
+      justify-center
+      class="header2"
+    >
       <v-flex class="header_text" xs10 sm10 md10 lg10>
         <div data-aos="fade-right">
           <h1 style="text-align: center !important">Aphorism</h1>
@@ -160,16 +174,9 @@
       </v-flex>
 
       <v-flex xs12 sm6 md6 lg6 text-start>
-        <v-layout row wrap justify-center>
-          <v-flex
-            xs12
-            sm12
-            md12
-            lg12
-            text-start
-            style="margin-right: 2%; margin-top: 2%; margin-left: 10%"
-          >
-            <v-card color="blue darken-4" dark>
+        <v-layout class="mx-1" row wrap justify-center>
+          <v-flex xs12 sm12 md12 lg12 text-start>
+            <v-card color="blue darken-4 mx-2" dark>
               <div
                 data-aos="zoom-in-down"
                 class="d-flex flex-no-wrap justify-space-between"
@@ -184,7 +191,7 @@
                 </v-avatar>
               </div>
             </v-card>
-            <v-card>
+            <v-card class="mx-2">
               <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <p class="my-1">
                   I, as the Chairman of the Executive Committee of Social
@@ -206,9 +213,10 @@
                   development.
                 </p>
                 <v-btn
+                  to="/chairman"
                   style="margin-left: 70%"
                   text
-                  class="btn-design1 button1 my-3"
+                  class="btn-design1 button1 my-3 hide-xs"
                   >Read More <v-icon>mdi-arrow-right</v-icon></v-btn
                 >
               </div>
@@ -216,15 +224,10 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex xs12 sm6 md6 lg6 text-start class="mt-8">
-        <v-layout
-          row
-          wrap
-          justify-center
-          style="margin-left: 2%; margin-top: 3%; margin-right: 10%"
-        >
+      <v-flex xs12 sm6 md6 lg6 text-start>
+        <v-layout row wrap justify-center class="mx-1">
           <v-flex xs12 sm12 md12 lg12 text-start class="">
-            <v-card color="blue darken-1" dark>
+            <v-card class="mx-2 mt-xs-4 mt-sm-4" color="blue darken-1" dark>
               <div
                 data-aos="zoom-in-up"
                 class="d-flex flex-no-wrap justify-space-between"
@@ -239,7 +242,7 @@
                 </v-avatar>
               </div>
             </v-card>
-            <v-card>
+            <v-card class="mx-2">
               <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <p class="my-1">
                   We are going to start a new year with a dream of building a
@@ -262,14 +265,13 @@
                 <v-btn
                   style="margin-left: 70%"
                   text
-                  class="btn-design1 button1 my-3"
+                  class="btn-design1 button1 my-3 hide-xs"
+                  to="/director"
                   >Read More <v-icon>mdi-arrow-right</v-icon></v-btn
                 >
               </div>
             </v-card>
-           
           </v-flex>
-          
         </v-layout>
       </v-flex>
     </v-layout>
@@ -323,9 +325,13 @@
         sm12
         text-center
       >
-        <v-card style="margin-left: 5%; margin-right: 5%">
-          <v-layout class="mx-2 my-2" row wrap justify-center>
+        <v-card
+          class="rounded-lg background"
+          style="margin-left: 5%; margin-right: 5%"
+        >
+          <v-layout class="mx-1 " row wrap justify-center>
             <v-flex
+            class="my-1"
               xs12
               md4
               lg3
@@ -457,6 +463,20 @@ export default {
 </script>
 <style scoped>
 @media only screen and (max-width: 600px) {
+  .hide-xs {
+    display: none;
+  }
+  .image {
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 3px solid #808080;
+    margin-top: 5px !important;
+  }
+  .slider-item {
+    margin: 10% 0% 10% 0%;
+  }
   .hover {
     color: rgb(red, green, blue);
   }
@@ -494,18 +514,21 @@ export default {
   }
   h2 {
     font-family: Century Gothic;
-    margin-top: 3%;
+    margin-top: 15%;
     margin-bottom: 3%;
-    font-size: 30px;
+    font-size: 2em;
     font-weight: 600;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    text-align: center;
+    margin-right: 2%;
+    line-height: 1.5em;
     letter-spacing: 0;
     color: #f2f2f2;
   }
   .slider-img {
     width: 410px;
     overflow: hidden;
+    margin: auto;
     height: 250px;
   }
   .slider-number {
@@ -602,7 +625,7 @@ export default {
     font-family: Century Gothic;
     margin-top: 3%;
     margin-bottom: 3%;
-    font-size: 35px;
+    font-size: 2em;
     font-weight: 900;
     letter-spacing: 0;
     color: #0d0d0e;
@@ -615,7 +638,7 @@ export default {
     font-family: Century Gothic;
     margin-top: 3%;
     margin-bottom: 3%;
-    font-size: 40px;
+    font-size: 1em;
     font-weight: 900;
     letter-spacing: 0;
     color: #3e3e4a;
@@ -680,13 +703,33 @@ export default {
   }
 }
 @media only screen and (min-width: 601px) {
+  .background {
+    color: #fff;
+    background: linear-gradient(
+       -45deg,
+       #25a6fc,
+      #0099FF,
+      #0099FF,
+      #014674,
+      #0099FF,
+      #024470,
+      #0099FF,
+      #0689e0,
+      #066bad
+    );
+    background-size: 400% 400%;
+     -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+  }
   .image {
     float: left;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    border: 3px solid #0820f7;
-    margin-top: 5px !important;
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+    border-radius: 2px;
   }
   .header_text h1 {
     font-family: Century Gothic;
@@ -724,7 +767,6 @@ export default {
     height: 600px;
   }
   .header2-bg {
-   
     width: 100%;
     position: relative;
     background-size: cover;
@@ -943,5 +985,6 @@ export default {
       transform: translate(0);
     }
   }
+
 }
 </style>

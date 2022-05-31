@@ -53,6 +53,18 @@ export default {
 };
 </script>
 <style scoped>
+@media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+  h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
  .gov h4 {
  
   font-family: Century Gothic;
@@ -65,13 +77,14 @@ export default {
 }
 
 .gov p {
-  font-size: 0.9em !important;
+  font-size: 1.05em !important;
   font-family: Century Gothic;
   font-weight: 500;
   letter-spacing: 1px;
-  line-height: 20px;
-  color: #020202;
+  line-height: 1.6em !important;
+  color: #000000;
   text-align: justify;
+  font-weight: 500;
   margin: 0% 5% 0% 5%;
   padding: 2%;
  

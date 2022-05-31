@@ -1,0 +1,39 @@
+<template>
+  <div class="mt-3">
+    <animal-health-care></animal-health-care>
+    <training-rehabilitation-center></training-rehabilitation-center>
+    <div style="margin-top: -10%">
+        <svg
+        style="margin-top: -5%"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1340 320"
+      >
+        <path
+          fill="#0099ff"
+          fill-opacity="1"
+          d="M0,224L48,229.3C96,235,192,245,288,208C384,171,480,85,576,80C672,75,768,149,864,149.3C960,149,1056,75,1152,58.7C1248,43,1344,85,1392,106.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    
+    <svg
+      style="margin-top: -5%"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+    >
+      <path
+        fill="#0099ff"
+        fill-opacity="1"
+        d="M0,160L40,149.3C80,139,160,117,240,122.7C320,128,400,160,480,197.3C560,235,640,277,720,288C800,299,880,277,960,256C1040,235,1120,213,1200,218.7C1280,224,1360,256,1400,272L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
+      ></path>
+    </svg>
+    </div>
+    <training-center style="margin-top: -25%"></training-center>
+    <solid-paper-board></solid-paper-board>
+    <nursery-development-centre></nursery-development-centre>
+   
+    
+    
+    
+    
+  </div>
+</template>

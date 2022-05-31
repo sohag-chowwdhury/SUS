@@ -1,5 +1,5 @@
 <template>
   <div>
-    <management></management>
+    <management style="margin-top:8%"></management>
   </div>
 </template>

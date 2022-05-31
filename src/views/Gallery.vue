@@ -96,4 +96,14 @@ export default {
   border: 3px solid #0820f7;
   margin-top: 5px !important;
 }
+ h1 {
+    font-size: 2em;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: #f6f6fd;
+    opacity: 1;
+    margin-top: 5%;
+    font-weight: 800;
+    text-align: center;
+  }
 </style>
